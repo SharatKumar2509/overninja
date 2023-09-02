@@ -247,7 +247,7 @@
       <div class="swiper-slide h-auto">
         <div class="card card-portfolio">
           <div class="card-img">
-            <img src="https://www.overninja.com/assets/portfolio/<?= $val['project_image'] ?>" alt="Image">
+            <img src="/uploads/portfolio/<?= $val['project_image'] ?>" alt="Image">
           </div>
           <div class="card-body">
             <h3 class="h4 mb-2">

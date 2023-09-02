@@ -339,7 +339,7 @@
     ?>
       <div id="image-<?= $i+1 ?>" class="jarallax position-absolute top-0 start-0 w-100 h-100 swiper-tab<?= ($i==0) ? ' active' : '' ?>" data-jarallax data-speed="0.4">
         <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"></span>
-        <div class="jarallax-img" style="background-image: url('https://www.overninja.com/assets/portfolio/<?= $portfolios[$i]['project_image'] ?>');"></div>
+        <div class="jarallax-img" style="background-image: url('/uploads/portfolio/<?= $portfolios[$i]['project_image'] ?>');"></div>
       </div>
     <?php
       }

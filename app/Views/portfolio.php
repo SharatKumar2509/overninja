@@ -50,7 +50,7 @@
   <div class="row pb-5 mb-md-4 mb-lg-5">
     <div class="col-md-6 pb-1 mb-3 pb-md-0 mb-md-0">
       <a href="/case-study/<?= $portfolio['id'] ?>">
-        <img src="https://www.overninja.com/assets/portfolio/<?= $portfolio['project_image'] ?>" class="rounded-3" width="600" alt="Image">
+        <img src="/uploads/portfolio/<?= $portfolio['project_image'] ?>" class="rounded-3" width="600" alt="Image">
       </a>
     </div>
     <div class="col-md-6">

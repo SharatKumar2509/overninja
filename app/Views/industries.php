@@ -154,7 +154,7 @@
       </div>
     </div>
     <div class="col-md-6 offset-lg-1 order-md-2 order-1 rellax" data-rellax-percentage="0.5" data-rellax-speed="0.5" data-disable-parallax-down="md">
-      <img src="/assets/img/services/industries/Gaming.jpg" alt="Image" class="d-block rounded-4">
+      <img src="/assets/img/services/industries/gaming.jpg" alt="Image" class="d-block rounded-4">
     </div>
   </div>
 

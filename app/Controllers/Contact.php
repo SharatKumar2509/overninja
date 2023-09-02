@@ -12,7 +12,7 @@ class Contact extends BaseController
 
         $client = \Config\Services::curlrequest();
 
-        $response = $client->post('https://ipapi.co/101.2.127.255/country_calling_code');
+        $response = $client->post('https://ipapi.co/'.$_SERVER['REMOTE_ADDR'].'/country_calling_code');
 
         if($response->getStatusCode() == 200) {
             $data['country_code'] = $response->getBody();
@@ -135,7 +135,7 @@ class Contact extends BaseController
         $email = \Config\Services::email();
 
         $email->setFrom("over1ninja@gmail.com", "Mail Server");
-        $email->setTo('sharatkumar2599@gmail.com');
+        $email->setTo('sales@overninja.com');
         $email->setSubject('New Subscriber Joined at overninja.com');
         $email->setMessage($msg);
         
