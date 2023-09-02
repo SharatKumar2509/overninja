@@ -1,0 +1,22 @@
+CRITICAL - 2023-08-18 14:01:50 --> include(/includes/navbar.php): Failed to open stream: No such file or directory
+in APPPATH\Views\layout.php on line 198.
+ 1 APPPATH\Views\layout.php(198): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(/includes/navbar.php): Failed to open stream: No such file or directory', 'E:\\xampp\\htdocs\\app\\Views\\layout.php', 198)
+ 2 APPPATH\Views\layout.php(198): include()
+ 3 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\app\\Views\\layout.php')
+ 4 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout.php', [], true)
+ 6 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('web-development', [], true)
+ 7 APPPATH\Controllers\Home.php(24): view('web-development')
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->web_development()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-18 15:02:51 --> Invalid file: "portfolio-detail.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('portfolio-detail.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('portfolio-detail', [], true)
+ 3 APPPATH\Controllers\Home.php(34): view('portfolio-detail')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->portfolio_detail()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

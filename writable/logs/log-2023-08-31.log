@@ -1,0 +1,53 @@
+CRITICAL - 2023-08-31 09:34:20 --> Invalid file: "digital-marketing.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('digital-marketing.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('digital-marketing', [], true)
+ 3 APPPATH\Controllers\Home.php(63): view('digital-marketing')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->digital_marketing()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 09:34:25 --> Invalid file: "digital-marketing.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('digital-marketing.php')
+ 2 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('digital-marketing', [], true)
+ 3 APPPATH\Controllers\Home.php(63): view('digital-marketing')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->digital_marketing()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 17:29:50 --> Undefined variable $meta_title
+in APPPATH\Views\layout.php on line 5.
+ 1 APPPATH\Views\layout.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $meta_title', 'E:\\xampp\\htdocs\\app\\Views\\layout.php', 5)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\app\\Views\\layout.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout.php', [], true)
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('portfolio', [], true)
+ 6 APPPATH\Controllers\Home.php(103): view('portfolio')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->portfolio()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 17:29:59 --> Undefined variable $meta_title
+in APPPATH\Views\layout.php on line 5.
+ 1 APPPATH\Views\layout.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $meta_title', 'E:\\xampp\\htdocs\\app\\Views\\layout.php', 5)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\app\\Views\\layout.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout.php', [], true)
+ 5 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('industries', [], true)
+ 6 APPPATH\Controllers\Home.php(119): view('industries')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->industries()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-08-31 18:16:34 --> Undefined variable $portfolio
+in APPPATH\Views\home.php on line 342.
+ 1 APPPATH\Views\home.php(342): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $portfolio', 'E:\\xampp\\htdocs\\app\\Views\\home.php', 342)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\app\\Views\\home.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('home', [], true)
+ 5 APPPATH\Controllers\Home.php(24): view('home', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
