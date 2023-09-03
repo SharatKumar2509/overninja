@@ -33,3 +33,19 @@ in APPPATH\Controllers\Account.php on line 74.
  3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Account))
  4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-03 18:17:31 --> Undefined constant "App\Controllers\item"
+in APPPATH\Controllers\Testimonial.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Testimonial->delete('14')
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Testimonial))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-03 18:33:01 --> Cannot redeclare App\Controllers\Testimonial::add()
+in APPPATH\Controllers\Testimonial.php on line 32.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-09-03 18:33:58 --> Call to undefined method App\Models\TestimonialModel::add
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\Testimonial.php(47): CodeIgniter\Model->__call('add', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Testimonial->add_testimonial()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Testimonial))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

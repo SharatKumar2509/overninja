@@ -9,7 +9,7 @@ class Account extends BaseController
     public function index()
     {
         if($this->session->get('logged_in') == "true") {
-            return redirect()->to(base_url()."blogs");
+            return redirect()->to(base_url()."blog");
         }
 
         return view('login');
@@ -18,7 +18,7 @@ class Account extends BaseController
     public function login()
     {
         if($this->session->get('logged_in') == "true") {
-            return redirect()->to(base_url()."blogs");
+            return redirect()->to(base_url()."blog");
         }
 
         $password = $this->request->getPost('password');
@@ -28,7 +28,7 @@ class Account extends BaseController
 
         if(sizeof($user) > 0) {
             $this->session->set('logged_in', 'true');
-            return redirect()->to(base_url()."blogs");
+            return redirect()->to(base_url()."blog");
         }
         else {
             $this->session->setFlashdata('result', 'failed');

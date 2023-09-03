@@ -22,8 +22,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="/admin/plugins/toastr/toastr.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/admin/dist/css/adminlte.min.css">
+
+  <!-- REQUIRED SCRIPTS -->
+
+  <!-- jQuery -->
+  <script src="/admin/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables  & Plugins -->
+  <script src="/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <!-- Toastr -->
+  <script src="/admin/plugins/toastr/toastr.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/admin/dist/js/adminlte.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -38,15 +59,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </div>
 <!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-<script src="/admin/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/admin/dist/js/adminlte.min.js"></script>
 
 </body>
 </html>
