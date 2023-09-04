@@ -10,8 +10,8 @@
   <div class="container position-relative zindex-2 pt-5 pb-2 pb-md-0">
     <div class="row justify-content-center pt-3 mt-3">
       <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
-        <h1 class="mb-4">Our Services</h1>
-        <p class="fs-lg pb-3 mb-3">Have a project in mind? To request a quote contact us directly or fill out the form and let us know how we can help.</p>
+        <h1 class="mb-4">Our Blog</h1>
+        <!-- <p class="fs-lg pb-3 mb-3">Have a project in mind? To request a quote contact us directly or fill out the form and let us know how we can help.</p> -->
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@
 
 <!-- Post image (parallax) -->
 <div class="jarallax mb-lg-5 mb-4" data-jarallax data-speed="0.35" style="height: 36.45vw; min-height: 300px;">
-  <div class="jarallax-img" style="background-image: url('/uploads/<?= $blog['blog_image'] ?>');"></div>
+  <div class="jarallax-img" style="background-image: url('/uploads/blogs/<?= $blog['blog_image'] ?>');"></div>
 </div>
 
 
@@ -75,24 +75,24 @@
       <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
         <h6>Share this post:</h6>
         <div class="mb-4 pb-lg-3">
-          <a href="#" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
+          <a href="https://linkedin.com/shareArticle?url=https://www.overninja.com/blog/<?= $blog['path'] ?>" target="_blank" rel="noreferrer noopener" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
             <i class="bx bxl-linkedin"></i>
           </a>
-          <a href="#" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2">
+          <a href="https://www.facebook.com/share.php?u=https://www.overninja.com/blog/<?= $blog['path'] ?>" target="_blank" rel="noreferrer noopener" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2">
             <i class="bx bxl-facebook"></i>
           </a>
-          <a href="#" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2">
-            <i class="bx bxl-twitter"></i>
+          <a href="https://www.twitter.com/share?url=https://www.overninja.com/blog/<?= $blog['path'] ?>" target="_blank" rel="noreferrer noopener" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2">
+            <i class="fab fa-x-twitter"></i>
           </a>
-          <a href="#" class="btn btn-icon btn-secondary btn-instagram me-2 mb-2">
-            <i class="bx bxl-instagram"></i>
+          <a href="https://api.whatsapp.com/send?text=https://www.overninja.com/blog/<?= $blog['path'] ?>" target="_blank" rel="noreferrer noopener" class="btn btn-icon btn-secondary btn-instagram me-2 mb-2">
+            <i class="bx bxl-whatsapp"></i>
           </a>
         </div>
-        <button class="btn btn-lg btn-outline-secondary">
+        <a href="<?= ($liked==true) ? '#' : '/blog/like/'.$blog['id'] ?>" class="btn btn-lg btn-outline-secondary">
           <i class="bx bx-like me-2 lead"></i>
-          Like it
+          <?= ($liked==true) ? 'Liked' : 'Like it' ?>
           <span class="badge bg-primary shadow-primary mt-n1 ms-3"><?= $blog['likes'] ?></span>
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -166,12 +166,18 @@
           <!-- Subscription form -->
           <div class="col-lg-12 col-sm-7 col-11">
             <h6 class="fs-lg">Enjoy this post? Join our newsletter</h6>
-            <form class="needs-validation" novalidate>
+            <form onsubmit="subscribe3()" id="subscr3-form" class="needs-validation">
               <div class="input-group mb-3">
                 <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y zindex-5 ms-3 text-muted d-lg-inline-block d-none"></i>
-                <input type="email" placeholder="Your Email" class="form-control ps-lg-5 rounded text-lg-start text-center" required>
+                <input type="email" id="subscr3-email" placeholder="Your Email" class="form-control ps-lg-5 rounded text-lg-start text-center" required>
               </div>
-              <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+              <button type="submit" class="btn btn-primary w-100" id="btn-subscr3">
+                <span>Subscribe</span>
+                <div id="subscr3-process" class="spinner-border spinner-border-sm text-light ms-3 d-none" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <i id="subscr3-success" class="fas fa-circle-check ms-3 d-none"></i>
+              </button>
             </form>
           </div>
 
@@ -179,17 +185,17 @@
           <div class="col-lg-12 col-sm-7 col-11">
             <h6 class="fs-lg">Don’t forget to share it</h6>
             <div class="mb-4 pb-lg-3">
-              <a href="#" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
+              <a href="https://linkedin.com/shareArticle?url=https://www.overninja.com/blog/<?= $blog['path'] ?>" target="_blank" rel="noreferrer noopener" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
                 <i class="bx bxl-linkedin"></i>
               </a>
-              <a href="#" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2">
+              <a href="https://www.facebook.com/share.php?u=https://www.overninja.com/blog/<?= $blog['path'] ?>" target="_blank" rel="noreferrer noopener" class="btn btn-icon btn-secondary btn-facebook me-2 mb-2">
                 <i class="bx bxl-facebook"></i>
               </a>
-              <a href="#" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2">
-                <i class="bx bxl-twitter"></i>
+              <a href="https://www.twitter.com/share?url=https://www.overninja.com/blog/<?= $blog['path'] ?>" target="_blank" rel="noreferrer noopener" class="btn btn-icon btn-secondary btn-twitter me-2 mb-2">
+                <i class="fab fa-x-twitter"></i>
               </a>
-              <a href="#" class="btn btn-icon btn-secondary btn-instagram me-2 mb-2">
-                <i class="bx bxl-instagram"></i>
+              <a href="https://api.whatsapp.com/send?text=https://www.overninja.com/blog/<?= $blog['path'] ?>" target="_blank" rel="noreferrer noopener" class="btn btn-icon btn-secondary btn-instagram me-2 mb-2">
+                <i class="bx bxl-whatsapp"></i>
               </a>
             </div>
           </div>
@@ -285,8 +291,37 @@ if(sizeof($moreBlogs)>0) {
   </div>
 </section>
 
+<?php
+
+}
+
+?>
+
 
 <?php include('includes/connect.php'); ?>
+
+
+<script type="text/javascript">
+  function subscribe3() {
+    event.preventDefault();
+    $('#btn-subscr3').prop('disabled', true);
+    $('#subscr3-process').removeClass('d-none');
+    $.post("/subscribe",
+      {
+        "email": $('#subscr3-email').val()
+      },
+      function(data, status){
+        $('#subscr3-form')[0].reset();
+        $('#btn-subscr3').prop('disabled', false);
+        $('#subscr3-process').addClass('d-none');
+        $('#subscr3-success').removeClass('d-none');
+        setTimeout(() => {
+          $('#subscr3-success').addClass('d-none');
+        }, 3000);
+      }
+    );
+  }
+</script>
 
 
 <?= $this->endSection(); ?>

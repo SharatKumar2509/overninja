@@ -49,6 +49,7 @@ $routes->get('/industries-we-serve', 'Home::industries');
 $routes->get('/blogs', 'Home::blogs');
 $routes->get('/blogs/(:any)', 'Home::blogs/$1');
 $routes->get('/blog/(:any)', 'Home::blog/$1');
+$routes->get('/blog/like/(:any)', 'Home::like_blog/$1');
 
 $routes->get('/career', 'Home::career');
 

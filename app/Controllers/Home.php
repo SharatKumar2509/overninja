@@ -23,7 +23,7 @@ class Home extends BaseController
         $data['testimonials'] = $testimonials;
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('home', $data);
@@ -43,7 +43,7 @@ class Home extends BaseController
         $data['testimonials'] = $testimonials;
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('about', $data);
@@ -59,7 +59,7 @@ class Home extends BaseController
         $data['testimonials'] = $testimonials;
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('services', $data);
@@ -71,7 +71,7 @@ class Home extends BaseController
         $data['meta_desc'] = "";
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('web-development', $data);
@@ -83,7 +83,7 @@ class Home extends BaseController
         $data['meta_desc'] = "";
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('mobile-app-development', $data);
@@ -95,7 +95,7 @@ class Home extends BaseController
         $data['meta_desc'] = "";
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('ecommerce-development', $data);
@@ -107,7 +107,7 @@ class Home extends BaseController
         $data['meta_desc'] = "";
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('it-support', $data);
@@ -119,7 +119,7 @@ class Home extends BaseController
         $data['meta_desc'] = "";
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('digital-marketing', $data);
@@ -131,7 +131,7 @@ class Home extends BaseController
         $data['meta_desc'] = "";
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('game-development', $data);
@@ -156,7 +156,7 @@ class Home extends BaseController
         $data['service'] = $service;
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('portfolio', $data);
@@ -189,7 +189,7 @@ class Home extends BaseController
         $data['meta_desc'] = "Explore how we bring innovation to various sectors. From technology to healthcare, we partner with industries to drive positive change.";
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('industries', $data);
@@ -316,7 +316,16 @@ class Home extends BaseController
         $blog = $blogModel->where('path', $path)->findAll();
         if(sizeof($blog)>0) {
             $data['blog'] = $blog[0];
-            $moreBlogs = $blogModel->where('id != '.$blog[0]['id'])->orderBy('created_on', 'DESC')->limit(3)->findAll();
+
+            $liked = false;
+            $liked = get_cookie('liked');
+            $liked = explode(",", $liked);
+            if(in_array($blog[0]['id'], $liked)!="") {
+                $liked = true;
+            }
+            $data['liked'] = $liked;
+
+            $moreBlogs = $blogModel->where('id != '.$blog[0]['id'])->orderBy('created_on', 'DESC')->limit(3)->find();
             $data['moreBlogs'] = $moreBlogs;
 
             return view('blog', $data);
@@ -324,6 +333,26 @@ class Home extends BaseController
         else {
             return redirect()->to(base_url()."blogs/1");
         }
+    }
+
+    public function like_blog($id)
+    {
+        $blogModel = new BlogModel();
+
+        $blog = $blogModel->where('id', $id)->findAll();
+        if(sizeof($blog)>0) {
+            $likes = $blog[0]['likes'] + 1;
+            $blogModel->update($id, ["likes" => $likes]);
+
+            $liked = get_cookie('liked');
+            $liked = $liked . $id . ",";
+
+            set_cookie('liked', $liked);
+
+            return redirect()->to(base_url()."blog/".$blog[0]['path']);
+        }
+
+        return redirect()->to(base_url()."blogs/1");
     }
 
     public function career()
@@ -340,7 +369,7 @@ class Home extends BaseController
         $data['meta_desc'] = "Hire Top Developers for Your Projects! Our skilled developers bring your ideas to life. From web to app development, find the perfect developer for your needs.";
 
         $blogModel = new BlogModel();
-        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
         $data['latestBlogs'] = $latestBlogs;
 
         return view('hire-developer', $data);
