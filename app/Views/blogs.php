@@ -63,10 +63,10 @@
 ?>
 
   <!-- Item -->
-  <article class="card border-0 shadow-sm overflow-hidden mb-4">
+  <article class="card border-0 shadow-sm overflow-hidden mb-4 mb-md-5">
     <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url('/uploads/<?= $blog['blog_image'] ?>'); min-height: 15rem;">
-        <a href="#" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url('/uploads/blogs/<?= $blog['blog_image'] ?>'); min-height: 15rem;">
+        <a href="/blog/<?= $blog['path'] ?>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
       </div>
       <div class="col-sm-8">
         <div class="card-body">
@@ -107,38 +107,47 @@
 ?>
 
   <!-- Pagination -->
-  <!-- <nav aria-label="Page navigation example">
+  <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center pt-lg-3 pt-1">
       <li class="page-item">
-        <a href="#" class="page-link">
+        <a href="<?= ($currentPage > $start) ? '/blogs/'.($currentPage-1) : '#' ?>" class="page-link">
           <i class="bx bx-chevron-left mx-n1"></i>
         </a>
       </li>
+      
       <li class="page-item disabled d-sm-none">
-        <span class="page-link text-body">2 / 4</span>
+        <span class="page-link text-body"><?= $currentPage." / ".$pageEnd ?></span>
       </li>
-      <li class="page-item d-none d-sm-block">
-        <a href="#" class="page-link">1</a>
-      </li>
+
+<?php
+  foreach ($pages as $item) {
+    if($item==$currentPage) {
+?>
       <li class="page-item active d-none d-sm-block" aria-current="page">
         <span class="page-link">
-          2
+          <?= $item ?>
           <span class="visually-hidden">(current)</span>
         </span>
       </li>
+<?php
+    }
+    else {
+?>
       <li class="page-item d-none d-sm-block">
-        <a href="#" class="page-link">3</a>
+        <a href="/blogs/<?= $item ?>" class="page-link"><?= $item ?></a>
       </li>
-      <li class="page-item d-none d-sm-block">
-        <a href="#" class="page-link">4</a>
-      </li>
+<?php
+    }
+  }
+?>
+
       <li class="page-item">
-        <a href="#" class="page-link">
+        <a href="<?= ($currentPage < $end) ? '/blogs/'.($currentPage+1) : '#' ?>" class="page-link">
           <i class="bx bx-chevron-right mx-n1"></i>
         </a>
       </li>
     </ul>
-  </nav> -->
+  </nav>
 </section>
 
 

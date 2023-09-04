@@ -55,3 +55,10 @@ ORDER BY `created_on` DESC', [], false)
  7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
  8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-04 06:13:03 --> Undefined variable $i
+in APPPATH\Controllers\Home.php on line 154.
+ 1 APPPATH\Controllers\Home.php(154): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $i', 'E:\\xampp\\htdocs\\app\\Controllers\\Home.php', 154)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->blogs('1')
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

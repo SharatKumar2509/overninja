@@ -142,20 +142,105 @@ class Home extends BaseController
         return view('industries', $data);
     }
 
-    public function blogs($id="")
+    public function blogs($page="")
     {
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
 
-        if($id=="") {
+        if($page=="") {
             return redirect()->to(base_url()."blogs/1");
         }
+
+        $start = 0;
+        $end = 0;
+        $itemCount = 20;
+
+        $pageStart = 0;
+        $pageEnd = 0;
+        $currentPage = $page;
+        $pages = [];
+
+        $start = ($page-1) * $itemCount;
 
         $blogModel = new BlogModel();
 
         $blogs = $blogModel->orderBy('created_on', 'DESC')->findAll();
+        $blogsCount = sizeof($blogs);
 
+        if($blogsCount <= $start) {
+            if($page == 1) {
+                $blogs = [];
+                $start = 0;
+                $end = 0;
+            }
+            else {
+                return redirect()->to(base_url()."blogs/1");
+            }
+        }
+        else {
+            $blogs = array_slice($blogs, $start, $itemCount);
+            $start = $start + 1;
+            $end = $start + sizeof($blogs);
+
+            $pageStart = 1;
+            $pageEnd = ceil($blogsCount/$itemCount);
+
+            array_push($pages, $currentPage);
+
+            if(($currentPage-1) >= $start) {
+                array_push($pages, $currentPage-1);
+
+                if(($currentPage-2) >= $start) {
+                    array_push($pages, $currentPage-2);
+                    if(($currentPage+1) <= $end) {
+                        array_push($pages, $currentPage+1);
+                        if(($currentPage+2) <= $end) {
+                            array_push($pages, $currentPage+2);
+                        }
+                        else if(($currentPage-3) >= $start) {
+                            array_push($pages, $currentPage-3);
+                        }
+                    }
+                    else if(($currentPage-3) >= $start) {
+                        array_push($pages, $currentPage-3);
+                        if(($currentPage-4) >= $start) {
+                            array_push($pages, $currentPage-4);
+                        }
+                    }
+                }
+                else if(($currentPage+1) <= $end) {
+                    array_push($pages, $currentPage+1);
+                    if(($currentPage+2) <= $end) {
+                        array_push($pages, $currentPage+2);
+                        if(($currentPage+3) <= $end) {
+                            array_push($pages, $currentPage+3);
+                        }
+                    }
+                }
+            }
+            else if(($currentPage+1) <= $end) {
+                array_push($pages, $currentPage+1);
+                if(($currentPage+2) <= $end) {
+                    array_push($pages, $currentPage+2);
+                    if(($currentPage+3) <= $end) {
+                        array_push($pages, $currentPage+3);
+                        if(($currentPage+4) <= $end) {
+                            array_push($pages, $currentPage+4);
+                        }
+                    }
+                }
+            }
+
+            sort($pages);
+        }
+        
         $data['blogs'] = $blogs;
+        $data['start'] = $start;
+        $data['end'] = $end;
+        $data['pageStart'] = $pageStart;
+        $data['pageEnd'] = $pageEnd;
+        $data['currentPage'] = $currentPage;
+        $data['pages'] = $pages;
 
         return view('blogs', $data);
     }
