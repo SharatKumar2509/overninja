@@ -10,7 +10,7 @@ class CommentModel extends Model {
 
 	protected $primaryKey = 'id';
 	
-	protected $allowedFields = ['id', 'blog_id', 'fullname', 'email', 'comments', 'timestamp'];
+	protected $allowedFields = ['id', 'blog_id', 'fullname', 'email', 'comment', 'timestamp'];
 
 }
 

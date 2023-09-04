@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\BlogModel;
+
 class Blog extends BaseController
 {
     public function index()
@@ -10,6 +12,11 @@ class Blog extends BaseController
             return redirect()->to(base_url()."login");
         }
 
-        return view('blog');
+        $blogModel = new BlogModel();
+
+        $blogs = $blogModel->orderBy('created_on', 'DESC')->findAll();
+        $data['blogs'] = $blogs;
+
+        return view('blog', $data);
     }
 }

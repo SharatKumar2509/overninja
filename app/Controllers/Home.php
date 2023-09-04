@@ -320,7 +320,7 @@ class Home extends BaseController
 
             $liked = false;
             $liked = $this->session->get('liked');
-            if($liked!=null)
+            if($liked!=null) {
                 set_cookie('liked', $liked, '2592000');
             }
             $liked = explode(",", $liked);
@@ -330,7 +330,7 @@ class Home extends BaseController
             $data['liked'] = $liked;
 
             $commentModel = new CommentModel();
-            $comments = $commentModel->where('blog_id', $blog[0]['id'])->limit(5)->find();
+            $comments = $commentModel->where('blog_id', $blog[0]['id'])->orderBy('timestamp', 'DESC')->limit(5)->find();
             $data['comments'] = $comments;
 
             $moreBlogs = $blogModel->where('id != '.$blog[0]['id'])->orderBy('created_on', 'DESC')->limit(3)->find();
@@ -383,7 +383,7 @@ class Home extends BaseController
             $commentModel = new CommentModel();
             $commentModel->insert($row);
 
-            $blogModel->update($blog[id], ["comments" => $blog['comments']+1]);
+            $blogModel->update($blog['id'], ["comments" => $blog['comments']+1]);
 
             return redirect()->to(base_url()."blog/".$blog['path']);
         }

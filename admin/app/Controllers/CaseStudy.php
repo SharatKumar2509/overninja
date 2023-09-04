@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\PortfolioModel;
+
 class CaseStudy extends BaseController
 {
     public function index()
@@ -10,6 +12,11 @@ class CaseStudy extends BaseController
             return redirect()->to(base_url()."login");
         }
 
-        return view('case-study');
+        $portfolioModel = new PortfolioModel();
+
+        $projects = $portfolioModel->orderBy('created_on', 'DESC')->findAll();
+        $data['projects'] = $projects;
+
+        return view('case-study', $data);
     }
 }
