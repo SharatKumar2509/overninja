@@ -10,7 +10,7 @@ class BlogModel extends Model {
 
 	protected $primaryKey = 'id';
 	
-	protected $allowedFields = ['id', 'path', 'title', 'author', 'meta_desc', 'blog_image', 'alt_text', 'content', 'likes', 'comments', 'created_on'];
+	protected $allowedFields = ['id', 'path', 'title', 'category', 'author', 'meta_desc', 'blog_image', 'alt_text', 'content', 'likes', 'comments', 'created_on'];
 
 }
 

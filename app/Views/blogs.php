@@ -71,7 +71,7 @@
       <div class="col-sm-8">
         <div class="card-body">
           <div class="d-flex align-items-center mb-3">
-            <div class="badge fs-sm text-nav bg-secondary text-decoration-none">Processes &amp; Tools</div>
+            <div class="badge fs-sm text-nav bg-secondary text-decoration-none"><?= $blog['category'] ?></div>
             <span class="fs-sm text-muted border-start ps-3 ms-3">
               <?= date("M d, Y", strtotime($blog['created_on'])); ?>
             </span>

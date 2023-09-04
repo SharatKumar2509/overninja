@@ -22,6 +22,10 @@ class Home extends BaseController
         $testimonials = $testimonialModel->orderBy('created_on', 'DESC')->findAll();
         $data['testimonials'] = $testimonials;
 
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
+
         return view('home', $data);
     }
 
@@ -38,6 +42,10 @@ class Home extends BaseController
         $testimonials = $testimonialModel->orderBy('created_on', 'DESC')->findAll();
         $data['testimonials'] = $testimonials;
 
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
+
         return view('about', $data);
     }
 
@@ -50,6 +58,10 @@ class Home extends BaseController
         $testimonials = $testimonialModel->orderBy('created_on', 'DESC')->findAll();
         $data['testimonials'] = $testimonials;
 
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
+
         return view('services', $data);
     }
 
@@ -57,6 +69,10 @@ class Home extends BaseController
     {
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
+
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
 
         return view('web-development', $data);
     }
@@ -66,6 +82,10 @@ class Home extends BaseController
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
 
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
+
         return view('mobile-app-development', $data);
     }
 
@@ -73,6 +93,10 @@ class Home extends BaseController
     {
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
+
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
 
         return view('ecommerce-development', $data);
     }
@@ -82,6 +106,10 @@ class Home extends BaseController
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
 
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
+
         return view('it-support', $data);
     }
 
@@ -90,6 +118,10 @@ class Home extends BaseController
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
 
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
+
         return view('digital-marketing', $data);
     }
 
@@ -97,6 +129,10 @@ class Home extends BaseController
     {
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
+
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
 
         return view('game-development', $data);
     }
@@ -118,6 +154,10 @@ class Home extends BaseController
         
         $data['portfolios'] = $portfolios;
         $data['service'] = $service;
+
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
 
         return view('portfolio', $data);
     }
@@ -148,6 +188,10 @@ class Home extends BaseController
         $data['meta_title'] = "";
         $data['meta_desc'] = "Explore how we bring innovation to various sectors. From technology to healthcare, we partner with industries to drive positive change.";
 
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
+
         return view('industries', $data);
     }
 
@@ -162,7 +206,7 @@ class Home extends BaseController
 
         $start = 0;
         $end = 0;
-        $itemCount = 20;
+        $itemCount = 15;
 
         $pageStart = 0;
         $pageEnd = 0;
@@ -174,7 +218,7 @@ class Home extends BaseController
         $blogModel = new BlogModel();
 
         $search = $this->request->getGet('search');
-        if($key!="") {
+        if($search!="") {
             $blogs = $blogModel->where("title like '%".$search."%'")->orderBy('created_on', 'DESC')->findAll();
         }
         else {
@@ -282,6 +326,10 @@ class Home extends BaseController
     {
         $data['meta_title'] = "";
         $data['meta_desc'] = "Hire Top Developers for Your Projects! Our skilled developers bring your ideas to life. From web to app development, find the perfect developer for your needs.";
+
+        $blogModel = new BlogModel();
+        $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->findAll();
+        $data['latestBlogs'] = $latestBlogs;
 
         return view('hire-developer', $data);
     }
