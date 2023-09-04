@@ -306,12 +306,24 @@ class Home extends BaseController
         return view('blogs', $data);
     }
 
-    public function blog()
+    public function blog($path)
     {
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
 
-        return view('blog', $data);
+        $blogModel = new BlogModel();
+
+        $blog = $blogModel->where('path', $path)->findAll();
+        if(sizeof($blog)>0) {
+            $data['blog'] = $blog[0];
+            $moreBlogs = $blogModel->where('id != '.$blog[0]['id'])->orderBy('created_on', 'DESC')->limit(3)->findAll();
+            $data['moreBlogs'] = $moreBlogs;
+
+            return view('blog', $data);
+        }
+        else {
+            return redirect()->to(base_url()."blogs/1");
+        }
     }
 
     public function career()

@@ -72,7 +72,7 @@
               <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
                   <div class="badge fs-sm text-nav bg-secondary text-decoration-none"><?= $latestBlogs[1]['category'] ?></div>
-                  <span class="fs-sm text-muted border-start ps-3 ms-3">1 day ago</span>
+                  <span class="fs-sm text-muted border-start ps-3 ms-3"><?= date("M d, Y", strtotime($latestBlogs[1]['created_on'])); ?></span>
                 </div>
                 <h3 class="h5">
                   <a href="/blog/<?= $latestBlogs[1]['path'] ?>"><?= $latestBlogs[1]['title'] ?></a>
@@ -116,7 +116,7 @@
               <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
                   <div class="badge fs-sm text-nav bg-secondary text-decoration-none"><?= $latestBlogs[2]['category'] ?></div>
-                  <span class="fs-sm text-muted border-start ps-3 ms-3">May 24, 2021</span>
+                  <span class="fs-sm text-muted border-start ps-3 ms-3"><?= date("M d, Y", strtotime($latestBlogs[2]['created_on'])); ?></span>
                 </div>
                 <h3 class="h5">
                   <a href="/blog/<?= $latestBlogs[2]['path'] ?>"><?= $latestBlogs[2]['title'] ?></a>

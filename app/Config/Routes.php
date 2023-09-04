@@ -48,7 +48,7 @@ $routes->get('/industries-we-serve', 'Home::industries');
 
 $routes->get('/blogs', 'Home::blogs');
 $routes->get('/blogs/(:any)', 'Home::blogs/$1');
-$routes->get('/blog/1', 'Home::blog');
+$routes->get('/blog/(:any)', 'Home::blog/$1');
 
 $routes->get('/career', 'Home::career');
 

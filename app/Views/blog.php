@@ -27,28 +27,28 @@
 
 <!-- Post title + Meta  -->
 <section class="container mt-5 pt-1 pt-md-5 pt-lg-2 pb-3">
-  <h1 class="mt-5 pt-5 pb-3" style="max-width: 970px;">This Long-Awaited Technology May Finally Change the World</h1>
+  <h1 class="mt-5 pt-5 pb-3" style="max-width: 970px;"><?= $blog['title'] ?></h1>
   <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
     <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
       <div class="fs-xs border-end pe-3 me-3 mb-2">
-        <span class="badge bg-faded-primary text-primary fs-base">Technology</span>
+        <span class="badge bg-faded-primary text-primary fs-base"><?= $blog['category'] ?></span>
       </div>
-      <div class="fs-sm border-end pe-3 me-3 mb-2">12 hours ago</div>
+      <div class="fs-sm border-end pe-3 me-3 mb-2"><?= date("M d, Y", strtotime($blog['created_on'])); ?></div>
       <div class="d-flex mb-2">
         <div class="d-flex align-items-center me-3">
           <i class="bx bx-like fs-base me-1"></i>
-          <span class="fs-sm">8</span>
+          <span class="fs-sm"><?= $blog['likes'] ?></span>
         </div>
         <div class="d-flex align-items-center me-3">
           <i class="bx bx-comment fs-base me-1"></i>
-          <span class="fs-sm">4</span>
+          <span class="fs-sm"><?= $blog['comments'] ?></span>
         </div>
       </div>
     </div>
     <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
       <div class="ps-3">
         <h6 class="mb-1">Author</h6>
-        <a href="#" class="fw-semibold stretched-link">Albert Flores</a>
+        <div class="fw-semibold text-primary stretched-link"><?= $blog['author'] ?></div>
       </div>
     </div>
   </div>
@@ -57,7 +57,7 @@
 
 <!-- Post image (parallax) -->
 <div class="jarallax mb-lg-5 mb-4" data-jarallax data-speed="0.35" style="height: 36.45vw; min-height: 300px;">
-  <div class="jarallax-img" style="background-image: url(/assets/img/blog/single/cover-image.jpg);"></div>
+  <div class="jarallax-img" style="background-image: url('/uploads/<?= $blog['blog_image'] ?>');"></div>
 </div>
 
 
@@ -67,80 +67,12 @@
 
     <!-- Content -->
     <div class="col-lg-9">
-      <h3 class="h5 mb-4 pb-2 fw-medium">Est quis sit phasellus proin proin fringilla eu quis. Placerat praesent blandit urna eu pellentesque dictum. Aliquam duis quam interdum quis. Urna, rutrum aenean lacus phasellus. Ipsum, ac porttitor lacus orci, cras lacus, quis leo.</h3>
-      <h2 class="h4">Paragraph Title</h2>
-      <p class="mb-4 pb-2">Purus ornare nisl est nec. Nunc, enim tellus pretium viverra quisque id in metus volutpat. Urna eget velit venenatis, commodo eget massa. Magna donec dictum cras nullam platea. Diam rhoncus massa lectus pellentesque tristique. Amet commodo, egestas vitae bibendum. Volutpat elit condimentum integer tortor porttitor justo vel lobortis risus. Lacinia pellentesque fermentum tellus orci mauris, velit duis eget. Commodo justo, hac ligula molestie felis, iaculis. Vitae dui at ante orci, dictum fusce. Urna, sed urna fringilla faucibus euismod aliquet nec. Quis libero, fermentum amet eu, condimentum auctor. Sit vel ipsum sem tempus gravida et. Scelerisque blandit orci, est quis. Nisi, tellus amet est nascetur habitant faucibus ornare et vivamus.</p>
-
-      <!-- Video -->
-      <div class="gallery mb-4 pb-2" data-video="true">
-        <a href="https://www.youtube.com/watch?v=LDb-G8y88Sc" class="gallery-item video-item is-hovered rounded-3" data-sub-html='<h6 class="fs-sm text-light">Video inside blog post</h6>'>
-          <img src="/assets/img/blog/single/video-cover.jpg" alt="Video preview">
-        </a>
-      </div>
-
-      <p class="mb-4 pb-2">Tempor donec aliquam est, a. Sit arcu tellus pharetra, bibendum hendrerit arcu, sed. Scelerisque dui enim libero sit ac sed lacus lectus. Quam in iaculis scelerisque feugiat nibh mi. Maecenas posuere lobortis praesent iaculis sagittis. Egestas vel at praesent ipsum pretium faucibus adipiscing gravida feugiat. Lacus, rhoncus velit at non nunc, quam urna, phasellus facilisis. Cursus elit posuere amet tortor at. Mi tristique congue vulputate eget in pellentesque tincidunt. In viverra est id nibh. Nunc tellus ultrices magna turpis. Viverra est morbi posuere dapibus nisi habitasse. Id tristique cursus vel metus.</p>
-
-      <!-- Quotation -->
-      <figure class="position-relative mb-4 ps-4">
-        <span class="position-absolute top-0 start-0 w-3 h-100 bg-primary"></span>
-        <blockquote class="blockquote fs-xl fw-medium text-dark ps-1 ps-sm-3">
-          <p>Sollicitudin eget massa, elementum, purus nec fermentum vitae, elementum. Tincidunt vulputate lorem cursus id. Dictum tincidunt mi ornare tristique. Id sit elit pulvinar eu. Tempus vel, mauris sed proin aliquet vulputate cras est. Ut ornare eget a viverra.</p>
-        </blockquote>
-        <figcaption class="d-flex align-items-center pt-3 ps-1 ps-sm-3">
-          <img src="/assets/img/avatar/04.jpg" width="48" class="rounded-circle" alt="Jane Cooper">
-          <div class="ps-3">
-            <h6 class="fw-semibold lh-base mb-0">Jane Cooper</h6>
-            <span class="fs-sm text-muted">CEO of Ipsum Company</span>
-          </div>
-        </figcaption>
-      </figure>
-
-      <p class="mb-4 pb-2">Pellentesque laoreet neque ut dictumst fames scelerisque. In malesuada orci dapibus risus tellus, amet, ultrices sagittis a. Turpis vel tincidunt tristique maecenas cursus tortor, suscipit ut. Ullamcorper at faucibus dolor tortor suspendisse suscipit senectus convallis aliquam. At orci amet facilisi nunc mi vitae iaculis diam a. Mauris venenatis sed purus cursus torte.</p>
-      <h2 class="h4">Paragraph Title 2</h2>
-      <p class="mb-4 pb-2">Praesent sed pulvinar posuere nisl tincidunt. Iaculis sit quam magna congue. Amet vel non aliquet habitasse. Egestas erat odio et, eleifend turpis etiam blandit interdum. Nec augue ut senectus quisque diam quis. At augue accumsan, in bibendum. A eget et, eget quisque egestas netus vel. Velit, aliquet turpis convallis ullamcorper. Scelerisque sagittis condimentum pretium in vitae etiam lacinia quis amet. Porttitor consequat, sollicitudin vivamus pharetra nibh faucibus neque, viverra. Praesent amet sed lacus vitae.</p>
-      <h4 class="h6">
-        <i class="bx bx-plus-circle me-1 mt-n1 align-middle fs-5 text-primary"></i>
-        PROS
-      </h4>
-      <ul class="mb-4 pb-2 ps-4">
-        <li class="mb-1">A eu, ac nunc, volutpat. Augue enim ac justo, at elementum, arcu.</li>
-        <li class="mb-1">At sodales quam felis ullamcorper iaculis tristique. Felis, etiam felis pellentesque sit neque.</li>
-        <li class="mb-1">Porta ipsum quis lacus eu ipsum mattis sit quis. Massa, massa lectus porttitor laoreet ultricies odio fermentum arcu quam.</li>
-        <li class="mb-1">Accumsan arcu neque, nisl, pellentesque fames justo consequat blandit lacus. Eget odio vel nulla vel.</li>
-        <li class="mb-1">Diam ac phasellus est, eu urna purus blandit aliquam. Vitae accumsan et pellentesque diam in.</li>
-        <li>Tellus arcu, lectus tincidunt neque nunc. Bibendum lacus, molestie ultrices sed arcu.</li>
-      </ul>
-      <h4 class="h6">
-        <i class="bx bx-minus-circle me-1 mt-n1 align-middle fs-5 text-primary"></i>
-        CONS
-      </h4>
-      <ul class="mb-4 pb-2 ps-4">
-        <li class="mb-1">Donec maecenas justo, et tortor quam elementum pharetra velit. Auctor dictum purus sollicitudin et quam vehicula amet lacus, integer.</li>
-        <li class="mb-1">Mi elit nibh erat facilisis. Volutpat eget malesuada mi in.</li>
-        <li class="mb-1">Tincidunt iaculis eleifend arcu egestas. Sit gravida vestibulum quam scelerisque.</li>
-        <li class="mb-1">Ornare elit, vel, ullamcorper nunc nulla pellentesque ut varius. Vitae tortor nulla a turpis erat fermentum, rhoncus.</li>
-        <li>Gravida cursus nunc habitant aliquet lacus. Tempus, interdum nullam non quam ipsum ultricies ac.</li>
-      </ul>
-      <h2 class="h4">Conclusion</h2>
-      <p class="mb-4 pb-2">Venenatis faucibus platea gravida amet sed sed urna volutpat. Aliquam neque, mi, justo odio semper. Egestas potentiquis neque nunc, rhoncus hendrerit. Viverra gravida pretium dolor eget placerat morbi proin eget. Vestibulum vitae ultrices vel sed sit quis. Ac quis diam at nulla libero. Turpis duis magna tellus condimentum.</p>
-      <p class="mb-4 pb-2">Velit parturient tellus tellus, congue pulvinar tellus viverra. In cum massa mattis ac. Amet vitae massa ut mi etiam. Auctor aliquam tristique felis donec eu sit nisi. Accumsan mauris eget convallis mattis sed etiam scelerisque.</p>
-
-      <!-- Tags -->
-      <hr class="mb-4">
-      <div class="d-flex flex-sm-row flex-column pt-2">
-        <h6 class="mt-sm-1 mb-sm-2 mb-3 me-2 text-nowrap">Related Tags:</h6>
-        <div>
-          <a href="#" class="btn btn-sm btn-outline-secondary me-2 mb-2">#lifestyle</a>
-          <a href="#" class="btn btn-sm btn-outline-secondary me-2 mb-2">#tech</a>
-          <a href="#" class="btn btn-sm btn-outline-secondary me-2 mb-2">#business</a>
-        </div>
-      </div>
+      <?= $blog['content'] ?>
     </div>
 
     <!-- Sharing -->
     <div class="col-lg-3 position-relative">
       <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
-        <span class="d-block mb-3">5 min read</span>
         <h6>Share this post:</h6>
         <div class="mb-4 pb-lg-3">
           <a href="#" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2">
@@ -159,7 +91,7 @@
         <button class="btn btn-lg btn-outline-secondary">
           <i class="bx bx-like me-2 lead"></i>
           Like it
-          <span class="badge bg-primary shadow-primary mt-n1 ms-3">8</span>
+          <span class="badge bg-primary shadow-primary mt-n1 ms-3"><?= $blog['likes'] ?></span>
         </button>
       </div>
     </div>
@@ -169,7 +101,7 @@
 
 <!-- Post comments -->
 <section class="container mb-4 pt-lg-4 pb-lg-3">
-  <h2 class="h1 text-center text-sm-start">4 comments</h2>
+  <h2 class="h1 text-center text-sm-start"><?= $blog['comments'] ?> comments</h2>
   <div class="row">
 
     <!-- Comments -->
@@ -178,74 +110,16 @@
       <!-- Comment -->
       <div class="py-4">
         <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
-          <div class="d-flex align-items-center me-3">
-            <div class="ps-3">
-              <h6 class="fw-semibold mb-0">Esther Howard</h6>
-              <span class="fs-sm text-muted">4 mins ago</span>
-            </div>
+          <div class="me-3">
+            <h6 class="fw-semibold mb-0">Cameron Williamson</h6>
+            <span class="fs-sm text-muted">March 24 at 8:20
+            <!-- date("M d, Y", strtotime("2023-09-25 12:00:00")) . " at " . date("h:i a", strtotime("2023-09-25 00:00:00")); -->
+          </span>
           </div>
-        </div>
-        <p class="mb-0">Nibh enim porta ut augue felis, donec sit luctus. Quis ullamcorper dolor sit mauris. Hendrerit eu libero, eu tristique sodales ultrices etiam adipiscing. Donec viverra sodales arcu gravida nibh at. Neque lobortis quis porta integer et placerat lectus scelerisque. Velit eget malesuada morbi faucibus at sed euismod. Tortor, eu ut id tincidunt leo placerat luctus.</p>
-      </div>
-
-      <hr class="my-2">
-
-      <!-- Comment -->
-      <div class="py-4">
-        <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
-          <div class="d-flex align-items-center me-3">
-            <img src="/assets/img/avatar/02.jpg" class="rounded-circle" width="48" alt="Avatar">
-            <div class="ps-3">
-              <h6 class="fw-semibold mb-0">Ralph Edwards</h6>
-              <span class="fs-sm text-muted">September 9 at 12:48</span>
-            </div>
-          </div>
-          <a href="#" class="nav-link fs-sm px-0">
-            <i class="bx bx-share fs-lg me-2"></i>
-            Reply
-          </a>
-        </div>
-        <p class="mb-0 pb-2">Eget amet, ac scelerisque tellus sed. Sapien duis sit neque pulvinar. Est sit aenean nisl etiam donec mattis ut diam. Luctus massa eu nunc aliquam viverra tempus, eu amet, luctus. Ac faucibus vestibulum eu lacus. Ullamcorper sem ultrices tincidunt pharetra?</p>
-
-        <!-- Comment reply -->
-        <div class="position-relative ps-4 mt-4">
-          <span class="position-absolute top-0 start-0 w-1 h-100 bg-primary"></span>
-          <div class="d-flex align-items-center justify-content-between ps-3 pb-2 mb-1">
-            <div class="d-flex align-items-center me-3">
-              <img src="/assets/img/avatar/05.jpg" class="rounded-circle" width="48" alt="Avatar">
-              <div class="ps-3">
-                <h6 class="fw-semibold mb-0">Albert Flores</h6>
-                <span class="fs-sm text-muted">16 hours ago</span>
-              </div>
-            </div>
-            <a href="#" class="nav-link fs-sm px-0">
-              <i class="bx bx-share fs-lg me-2"></i>
-              Reply
-            </a>
-          </div>
-          <p class="ps-3 mb-0"><a href="#" class="fw-semibold text-decoration-none">@Ralph Edwards</a> Vulputate malesuada amet, consequat ullamcorper. Orci, cras maecenas in sit purus pellentesque. Ridiculus blandit pellentesque eget arcu morbi nisl. Morbi volutpat adipiscing sapien sed ut tempor.</p>
-        </div>
-      </div>
-
-      <hr class="my-2">
-
-      <!-- Comment -->
-      <div class="py-4">
-        <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
-          <div class="d-flex align-items-center me-3">
-            <img src="/assets/img/avatar/07.jpg" class="rounded-circle" width="48" alt="Avatar">
-            <div class="ps-3">
-              <h6 class="fw-semibold mb-0">Cameron Williamson</h6>
-              <span class="fs-sm text-muted">March 24 at 8:20</span>
-            </div>
-          </div>
-          <a href="#" class="nav-link fs-sm px-0">
-            <i class="bx bx-share fs-lg me-2"></i>
-            Reply
-          </a>
         </div>
         <p class="mb-0">Mattis id ut sed arcu metus elit faucibus condimentum aliquam. Nam adipiscing diam et suspendisse. Sagittis massa maecenas laoreet nulla amet nunc sagittis, pulvinar neque. Duis imperdiet ipsum suspendisse massa lectus habitasse. Id ante volutpat hendrerit augue parturient eget. Ac vitae posuere leo morbi vitae at hac lectus. Nibh neque quam quis amet mattis sit. Faucibus risus at sit tempus ut.</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -275,12 +149,6 @@
               <label for="c-comment" class="form-label fs-base">Comment</label>
               <textarea id="c-comment" class="form-control form-control-lg" rows="3" placeholder="Type your comment here..." required></textarea>
               <span class="invalid-tooltip">Please, enter your comment.</span>
-            </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input id="c-save" type="checkbox" class="form-check-input">
-                <label for="c-save" class="form-check-label">Save my name and email in this browser for the next time I comment.</label>
-              </div>
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-lg btn-primary w-sm-auto w-100 mt-2">Post comment</button>
@@ -331,13 +199,18 @@
   </div>
 </section>
 
+<?php
+
+if(sizeof($moreBlogs)>0) {
+
+?>
 
 <!-- Related articles (Slider below lg breakpoint) -->
 <section class="container mb-5 pt-md-4">
   <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between mb-4 pb-1 pb-md-3">
-    <h2 class="h1 mb-sm-0">Related Articles</h2>
-    <a href="blog-list-with-sidebar.html" class="btn btn-lg btn-outline-primary ms-4">
-      All posts
+    <h2 class="h1 mb-sm-0">More Blogs</h2>
+    <a href="/blogs" class="btn btn-lg btn-outline-primary ms-4">
+      View All
       <i class="bx bx-right-arrow-alt ms-1 me-n1 lh-1 lead"></i>
     </a>
   </div>
@@ -360,89 +233,51 @@
   }'>
     <div class="swiper-wrapper">
 
+<?php
+  foreach ($moreBlogs as $item) {
+?>
       <!-- Item -->
       <div class="swiper-slide h-auto pb-3">
         <article class="card border-0 shadow-sm h-100 mx-2">
           <div class="position-relative">
-            <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-            <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-              <i class="bx bx-bookmark"></i>
-            </a>
-            <img src="/assets/img/blog/01.jpg" class="card-img-top" alt="Image">
+            <a href="/blog/<?= $item['path'] ?>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+            <img src="/uploads/blogs/<?= $item['blog_image'] ?>" class="card-img-top" alt="<?= $item['alt_text'] ?>">
           </div>
           <div class="card-body pb-4">
             <div class="d-flex align-items-center justify-content-between mb-3">
-              <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Business</a>
-              <span class="fs-sm text-muted">May 19, 2021</span>
+              <div class="badge fs-sm text-nav bg-secondary text-decoration-none"><?= $item['category'] ?></div>
+              <span class="fs-sm text-muted"><?= date("M d, Y", strtotime($item['created_on'])); ?></span>
             </div>
             <h3 class="h5 mb-0">
-              <a href="blog-single.html">5 Bad Landing Page Examples &amp; How We Would Fix Them</a>
+              <a href="/blog/<?= $item['path'] ?>"><?= $item['title'] ?></a>
             </h3>
           </div>
           <div class="card-footer py-4">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
-              <img src="/assets/img/avatar/01.jpg" class="rounded-circle me-3" width="48" alt="Avatar">
-              Jerome Bell
-            </a>
+            <div class="d-flex flex-sm-nowrap flex-wrap align-items-center justify-content-between">
+              <div class="d-flex align-items-center position-relative me-3">
+                <div>
+                  <div class="nav-link p-0 fw-bold text-decoration-none stretched-link"><?= $item['author'] ?></div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center mt-sm-0 mt-4 text-muted">
+                <div class="d-flex align-items-center me-3">
+                  <i class="bx bx-like fs-lg me-1"></i>
+                  <span class="fs-sm"><?= $item['likes'] ?></span>
+                </div>
+                <div class="d-flex align-items-center me-3">
+                  <i class="bx bx-comment fs-lg me-1"></i>
+                  <span class="fs-sm"><?= $item['comments'] ?></span>
+                </div>
+              </div>
+            </div>
           </div>
         </article>
       </div>
 
-      <!-- Item -->
-      <div class="swiper-slide h-auto pb-3">
-        <article class="card border-0 shadow-sm h-100 mx-2">
-          <div class="position-relative">
-            <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-            <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-              <i class="bx bx-bookmark"></i>
-            </a>
-            <img src="/assets/img/blog/06.jpg" class="card-img-top" alt="Image">
-          </div>
-          <div class="card-body pb-4">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Marketing</a>
-              <span class="fs-sm text-muted">Apr 2, 2021</span>
-            </div>
-            <h3 class="h5 mb-0">
-              <a href="blog-single.html">How Agile is Your Forecasting Process?</a>
-            </h3>
-          </div>
-          <div class="card-footer py-4">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
-              <img src="/assets/img/avatar/05.jpg" class="rounded-circle me-3" width="48" alt="Avatar">
-              Albert Flores
-            </a>
-          </div>
-        </article>
-      </div>
+<?php
+  }
+?>
 
-      <!-- Item -->
-      <div class="swiper-slide h-auto pb-3">
-        <article class="card border-0 shadow-sm h-100 mx-2">
-          <div class="position-relative">
-            <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-            <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-              <i class="bx bx-bookmark"></i>
-            </a>
-            <img src="/assets/img/blog/03.jpg" class="card-img-top" alt="Image">
-          </div>
-          <div class="card-body pb-4">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Business</a>
-              <span class="fs-sm text-muted">Sep 16, 2021</span>
-            </div>
-            <h3 class="h5 mb-0">
-              <a href="blog-single.html">This Week in Search: New Limits and Exciting Features</a>
-            </h3>
-          </div>
-          <div class="card-footer py-4">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none">
-              <img src="/assets/img/avatar/02.jpg" class="rounded-circle me-3" width="48" alt="Avatar">
-              Ralph Edwards
-            </a>
-          </div>
-        </article>
-      </div>
     </div>
 
     <!-- Pagination (bullets) -->
