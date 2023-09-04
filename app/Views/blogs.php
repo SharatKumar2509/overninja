@@ -48,10 +48,10 @@
           </div>
         </div>
         <div class="col-lg-7 col-sm-6">
-          <div class="input-group">
-            <input type="text" class="form-control pe-5 rounded" placeholder="Search the blog...">
+          <form action="/blogs/1" method="get" class="input-group">
+            <input type="text" name="search" value="<?= $search ?>" class="form-control pe-5 rounded" placeholder="Search the blog...">
             <i class="bx bx-search position-absolute top-50 end-0 translate-middle-y me-3 zindex-5 fs-lg"></i>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -103,14 +103,13 @@
 
 <?php
     }
-  }
 ?>
 
   <!-- Pagination -->
   <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center pt-lg-3 pt-1">
       <li class="page-item">
-        <a href="<?= ($currentPage > $start) ? '/blogs/'.($currentPage-1) : '#' ?>" class="page-link">
+        <a href="<?= ($currentPage > $pageStart) ? '/blogs/'.($currentPage-1) : '#' ?>" class="page-link">
           <i class="bx bx-chevron-left mx-n1"></i>
         </a>
       </li>
@@ -142,12 +141,28 @@
 ?>
 
       <li class="page-item">
-        <a href="<?= ($currentPage < $end) ? '/blogs/'.($currentPage+1) : '#' ?>" class="page-link">
+        <a href="<?= ($currentPage < $pageEnd) ? '/blogs/'.($currentPage+1) : '#' ?>" class="page-link">
           <i class="bx bx-chevron-right mx-n1"></i>
         </a>
       </li>
     </ul>
   </nav>
+
+<?php
+  }
+  else {
+?>
+
+  <div class="row mt-4 mb-4 mt-md-5">
+    <div class="col-md-10 col-xl-8 offset-md-1 offset-xl-2">
+      <div class="alert alert-info fw-bold text-center mt-md-5">No blogs found. Please come back after some time.</div>
+    </div>
+  </div>
+
+<?php
+  }
+?>
+
 </section>
 
 

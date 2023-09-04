@@ -107,8 +107,17 @@ class Home extends BaseController
         $data['meta_desc'] = "Dive into our diverse range of case studies that highlight our expertise and commitment to finding effective strategies. Learn how we turn insights into action.";
 
         $portfolioModel = new PortfolioModel();
-        $portfolios = $portfolioModel->orderBy('created_on', 'DESC')->findAll();
+        
+        $service = $this->request->getGet('service');
+        if($service!="") {
+            $portfolios = $portfolioModel->where("service like '%".$service."%'")->orderBy('created_on', 'DESC')->findAll();
+        }
+        else {
+            $portfolios = $portfolioModel->orderBy('created_on', 'DESC')->findAll();
+        }
+        
         $data['portfolios'] = $portfolios;
+        $data['service'] = $service;
 
         return view('portfolio', $data);
     }
@@ -164,7 +173,14 @@ class Home extends BaseController
 
         $blogModel = new BlogModel();
 
-        $blogs = $blogModel->orderBy('created_on', 'DESC')->findAll();
+        $search = $this->request->getGet('search');
+        if($key!="") {
+            $blogs = $blogModel->where("title like '%".$search."%'")->orderBy('created_on', 'DESC')->findAll();
+        }
+        else {
+            $blogs = $blogModel->orderBy('created_on', 'DESC')->findAll();
+        }
+
         $blogsCount = sizeof($blogs);
 
         if($blogsCount <= $start) {
@@ -187,44 +203,44 @@ class Home extends BaseController
 
             array_push($pages, $currentPage);
 
-            if(($currentPage-1) >= $start) {
+            if(($currentPage-1) >= $pageStart) {
                 array_push($pages, $currentPage-1);
 
-                if(($currentPage-2) >= $start) {
+                if(($currentPage-2) >= $pageStart) {
                     array_push($pages, $currentPage-2);
-                    if(($currentPage+1) <= $end) {
+                    if(($currentPage+1) <= $pageEnd) {
                         array_push($pages, $currentPage+1);
-                        if(($currentPage+2) <= $end) {
+                        if(($currentPage+2) <= $pageEnd) {
                             array_push($pages, $currentPage+2);
                         }
-                        else if(($currentPage-3) >= $start) {
+                        else if(($currentPage-3) >= $pageStart) {
                             array_push($pages, $currentPage-3);
                         }
                     }
-                    else if(($currentPage-3) >= $start) {
+                    else if(($currentPage-3) >= $pageStart) {
                         array_push($pages, $currentPage-3);
-                        if(($currentPage-4) >= $start) {
+                        if(($currentPage-4) >= $pageStart) {
                             array_push($pages, $currentPage-4);
                         }
                     }
                 }
-                else if(($currentPage+1) <= $end) {
+                else if(($currentPage+1) <= $pageEnd) {
                     array_push($pages, $currentPage+1);
-                    if(($currentPage+2) <= $end) {
+                    if(($currentPage+2) <= $pageEnd) {
                         array_push($pages, $currentPage+2);
-                        if(($currentPage+3) <= $end) {
+                        if(($currentPage+3) <= $pageEnd) {
                             array_push($pages, $currentPage+3);
                         }
                     }
                 }
             }
-            else if(($currentPage+1) <= $end) {
+            else if(($currentPage+1) <= $pageEnd) {
                 array_push($pages, $currentPage+1);
-                if(($currentPage+2) <= $end) {
+                if(($currentPage+2) <= $pageEnd) {
                     array_push($pages, $currentPage+2);
-                    if(($currentPage+3) <= $end) {
+                    if(($currentPage+3) <= $pageEnd) {
                         array_push($pages, $currentPage+3);
-                        if(($currentPage+4) <= $end) {
+                        if(($currentPage+4) <= $pageEnd) {
                             array_push($pages, $currentPage+4);
                         }
                     }
@@ -241,6 +257,7 @@ class Home extends BaseController
         $data['pageEnd'] = $pageEnd;
         $data['currentPage'] = $currentPage;
         $data['pages'] = $pages;
+        $data['search'] = $search;
 
         return view('blogs', $data);
     }

@@ -28,14 +28,16 @@
 <!-- Page title + filters -->
 <section class="container d-sm-flex align-items-center justify-content-between pt-5 pb-4 pb-md-5 mt-5 mb-2 mb-lg-3">
   <h1 class="pt-2 mt-0 mt-md-5 mb-sm-0 me-sm-3">Portfolio List</h1>
-  <select class="form-select mt-0 mt-md-5" style="width: 240px;">
-    <option>All categories</option>
-    <option>Web Development</option>
-    <option>Mobile App Development</option>
-    <option>Ecommerce Development</option>
-    <option>Digital Marketing</option>
-    <option>Game Development</option>
-  </select>
+  <form action="/case-study" method="get" id="serviceForm">
+    <select name="service" class="form-select mt-0 mt-md-5" style="width: 240px;" onchange="document.getElementById('serviceForm').submit()">
+      <option value="" <?= ($service=="") ? 'selected' : '' ?>>All categories</option>
+      <option <?= ($service=="Web Development") ? 'selected' : '' ?>>Web Development</option>
+      <option <?= ($service=="Mobile App Development") ? 'selected' : '' ?>>Mobile App Development</option>
+      <option <?= ($service=="Ecommerce Development") ? 'selected' : '' ?>>Ecommerce Development</option>
+      <option <?= ($service=="Digital Marketing") ? 'selected' : '' ?>>Digital Marketing</option>
+      <option <?= ($service=="Game Development") ? 'selected' : '' ?>>Game Development</option>
+    </select>
+  </form>
 </section>
 
 
@@ -43,7 +45,8 @@
 <section class="container pb-2 pb-lg-3">
 
 <?php
-  foreach ($portfolios as $portfolio) {
+  if(sizeof($portfolios)>0) {
+    foreach ($portfolios as $portfolio) {
 ?>
 
   <!-- Item -->
@@ -60,6 +63,18 @@
         <p class="d-md-none d-lg-block pb-3 mb-2 mb-md-3"><?= $portfolio['introduction'] ?></p>
         <a href="/case-study/<?= $portfolio['id'] ?>" class="btn btn-outline-primary">Know more</a>
       </div>
+    </div>
+  </div>
+
+<?php
+    }
+  }
+  else {
+?>
+
+  <div class="row mt-4 mb-4 mb-mb-5">
+    <div class="col-md-10 col-xl-8 offset-md-1 offset-xl-2 mb-4">
+      <div class="alert alert-info fw-bold text-center mb-md-5">No case study found. Please come back after some time.</div>
     </div>
   </div>
 
