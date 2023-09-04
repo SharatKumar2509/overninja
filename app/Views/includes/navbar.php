@@ -36,7 +36,7 @@
             <a href="/case-study" class="nav-link">Case Study</a>
           </li>
           <li class="nav-item">
-            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/blogs" class="nav-link">Blog</a>
           </li>
         </ul>
       </div>

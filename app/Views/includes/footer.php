@@ -13,7 +13,7 @@
             <li class="nav-item"><a href="/services" class="nav-link d-inline-block px-0 pt-1 pb-2">Services</a></li>
             <li class="nav-item"><a href="/case-study" class="nav-link d-inline-block px-0 pt-1 pb-2">Case Study</a></li>
             <li class="nav-item"><a href="/industries-we-serve" class="nav-link d-inline-block px-0 pt-1 pb-2">Industries</a></li>
-            <li class="nav-item"><a href="/blog" class="nav-link d-inline-block px-0 pt-1 pb-2">Blog</a></li>
+            <li class="nav-item"><a href="/blogs" class="nav-link d-inline-block px-0 pt-1 pb-2">Blog</a></li>
             <li class="nav-item"><a href="/career" class="nav-link d-inline-block px-0 pt-1 pb-2">Career</a></li>
             <li class="nav-item"><a href="/contact" class="nav-link d-inline-block px-0 pt-1 pb-2">Contact Us</a></li>
           </ul>

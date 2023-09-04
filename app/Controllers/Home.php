@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\StatsModel;
 use App\Models\PortfolioModel;
+use App\Models\BlogModel;
 use App\Models\TestimonialModel;
 
 class Home extends BaseController
@@ -141,10 +142,20 @@ class Home extends BaseController
         return view('industries', $data);
     }
 
-    public function blogs()
+    public function blogs($id="")
     {
         $data['meta_title'] = "";
         $data['meta_desc'] = "";
+
+        if($id=="") {
+            return redirect()->to(base_url()."blogs/1");
+        }
+
+        $blogModel = new BlogModel();
+
+        $blogs = $blogModel->orderBy('created_on', 'DESC')->findAll();
+
+        $data['blogs'] = $blogs;
 
         return view('blogs', $data);
     }

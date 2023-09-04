@@ -46,7 +46,8 @@ $routes->get('/case-study/(:any)', 'Home::portfolio_detail/$1');
 
 $routes->get('/industries-we-serve', 'Home::industries');
 
-$routes->get('/blog', 'Home::blogs');
+$routes->get('/blogs', 'Home::blogs');
+$routes->get('/blogs/(:any)', 'Home::blogs/$1');
 $routes->get('/blog/1', 'Home::blog');
 
 $routes->get('/career', 'Home::career');

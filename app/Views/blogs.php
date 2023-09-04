@@ -57,38 +57,42 @@
     </div>
   </div>
 
+<?php
+  if(sizeof($blogs) > 0) {
+    foreach ($blogs as $blog) {
+?>
+
   <!-- Item -->
   <article class="card border-0 shadow-sm overflow-hidden mb-4">
     <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(/assets/img/blog/01.jpg); min-height: 15rem;">
-        <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-          <i class="bx bx-bookmark"></i>
-        </a>
+      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url('/uploads/<?= $blog['blog_image'] ?>'); min-height: 15rem;">
+        <a href="#" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
       </div>
       <div class="col-sm-8">
         <div class="card-body">
           <div class="d-flex align-items-center mb-3">
-            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Processes &amp; Tools</a>
-            <span class="fs-sm text-muted border-start ps-3 ms-3">Sep 3, 2021</span>
+            <div class="badge fs-sm text-nav bg-secondary text-decoration-none">Processes &amp; Tools</div>
+            <span class="fs-sm text-muted border-start ps-3 ms-3">
+              <?= date("M d, Y", strtotime($blog['created_on'])); ?>
+            </span>
           </div>
           <h3 class="h4">
-            <a href="blog-single.html">5 Bad Landing Page Examples &amp; How We Would Fix Them</a>
+            <a href="/blog/<?= $blog['path'] ?>"><?= $blog['title'] ?></a>
           </h3>
-          <p>Tellus sagittis dolor pellentesque vel porttitor magna aliquet arcu. Interdum risus mauris pulvinar et vel. Morbi tellus, scelerisque vel metus. Scelerisque arcu egestas ac commodo, ac nibh. Pretium ac elit sed nulla nec.</p>
+          <p><?= $blog['meta_desc'] ?></p>
           <hr class="my-4">
           <div class="d-flex align-items-center justify-content-between">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-              Jerome Bell
-            </a>
+            <div class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
+              <?= $blog['author'] ?>
+            </div>
             <div class="d-flex align-items-center text-muted">
               <div class="d-flex align-items-center me-3">
                 <i class="bx bx-like fs-lg me-1"></i>
-                <span class="fs-sm">8</span>
+                <span class="fs-sm"><?= $blog['likes'] ?></span>
               </div>
               <div class="d-flex align-items-center me-3">
                 <i class="bx bx-comment fs-lg me-1"></i>
-                <span class="fs-sm">7</span>
+                <span class="fs-sm"><?= $blog['comments'] ?></span>
               </div>
             </div>
           </div>
@@ -97,233 +101,13 @@
     </div>
   </article>
 
-  <!-- Item -->
-  <article class="card border-0 shadow-sm overflow-hidden mb-4">
-    <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(/assets/img/blog/06.jpg); min-height: 15rem;">
-        <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-          <i class="bx bx-bookmark"></i>
-        </a>
-      </div>
-      <div class="col-sm-8">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
-            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Startups</a>
-            <span class="fs-sm text-muted border-start ps-3 ms-3">Sep 10, 2021</span>
-          </div>
-          <h3 class="h4">
-            <a href="blog-single.html">How Agile is Your Forecasting Process?</a>
-          </h3>
-          <p>Nulla fringilla arcu justo augue fringilla in nunc volutpat sit. Dui diam, faucibus vitae ultricies vitae mollis nunc elementum. Et, habitasse porta neque tempor tellus ut. Sagittis odio porttitor erat viverra erat neque.</p>
-          <hr class="my-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-              <img src="/assets/img/avatar/05.jpg" class="rounded-circle me-3" width="48" alt="Avatar">
-              Albert Flores
-            </a>
-            <div class="d-flex align-items-center text-muted">
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-like fs-lg me-1"></i>
-                <span class="fs-sm">3</span>
-              </div>
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-comment fs-lg me-1"></i>
-                <span class="fs-sm">6</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="bx bx-share-alt fs-lg me-1"></i>
-                <span class="fs-sm">0</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Item -->
-  <article class="card border-0 shadow-sm overflow-hidden mb-4">
-    <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(/assets/img/blog/05.jpg); min-height: 15rem;">
-        <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-          <i class="bx bx-bookmark"></i>
-        </a>
-      </div>
-      <div class="col-sm-8">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
-            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Digital</a>
-            <span class="fs-sm text-muted border-start ps-3 ms-3">Oct 9, 2021</span>
-          </div>
-          <h3 class="h4">
-            <a href="blog-single.html">Inclusive Marketing: Why and How Does it Work?</a>
-          </h3>
-          <p>Nunc aliquet scelerisque pellentesque imperdiet tortor elit, dictum. Tristique odio at dignissim viverra aliquet eleifend erat. Tellus, at arcu, egestas praesent. Varius aliquet pharetra adipiscing tincidunt orci nec neque.</p>
-          <hr class="my-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-              <img src="/assets/img/avatar/04.jpg" class="rounded-circle me-3" width="48" alt="Avatar">
-              Jane Cooper
-            </a>
-            <div class="d-flex align-items-center text-muted">
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-like fs-lg me-1"></i>
-                <span class="fs-sm">5</span>
-              </div>
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-comment fs-lg me-1"></i>
-                <span class="fs-sm">0</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="bx bx-share-alt fs-lg me-1"></i>
-                <span class="fs-sm">2</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Item -->
-  <article class="card border-0 shadow-sm overflow-hidden mb-4">
-    <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(/assets/img/blog/09.jpg); min-height: 15rem;">
-        <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-          <i class="bx bx-bookmark"></i>
-        </a>
-      </div>
-      <div class="col-sm-8">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
-            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Strategy</a>
-            <span class="fs-sm text-muted border-start ps-3 ms-3">Sep 3, 2021</span>
-          </div>
-          <h3 class="h4">
-            <a href="blog-single.html">This Long-Awaited Technology May Finally Change the World</a>
-          </h3>
-          <p>Sapien, nulla placerat in at. Vitae tincidunt quam ornare massa porttitor. Neque a vitae feugiat in sit habitant integer. Cursus et at pulvinar sed neque vitae. Aliquam vitae hac phasellus purus lectus facilisi. Vitae vel ac quam.</p>
-          <hr class="my-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-              <img src="/assets/img/avatar/02.jpg" class="rounded-circle me-3" width="48" alt="Avatar">
-              Ralph Edwards
-            </a>
-            <div class="d-flex align-items-center text-muted">
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-like fs-lg me-1"></i>
-                <span class="fs-sm">8</span>
-              </div>
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-comment fs-lg me-1"></i>
-                <span class="fs-sm">7</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="bx bx-share-alt fs-lg me-1"></i>
-                <span class="fs-sm">4</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Item -->
-  <article class="card border-0 shadow-sm overflow-hidden mb-4">
-    <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(/assets/img/blog/03.jpg); min-height: 15rem;">
-        <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-          <i class="bx bx-bookmark"></i>
-        </a>
-      </div>
-      <div class="col-sm-8">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
-            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Business</a>
-            <span class="fs-sm text-muted border-start ps-3 ms-3">Sep 16, 2021</span>
-          </div>
-          <h3 class="h4">
-            <a href="blog-single.html">This Week in Search: New Limits and Exciting Features</a>
-          </h3>
-          <p>Aliquet donec cras amet orci in in neque. Ut sed diam quis consectetur purus lorem eu, sit. Aliquam eget arcu sed urna feugiat. In integer nisl at dui malesuada. Diam pellentesque lobortis elementum lacus at in lectus.</p>
-          <hr class="my-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-              <img src="/assets/img/avatar/02.jpg" class="rounded-circle me-3" width="48" alt="Avatar">
-              Ralph Edwards
-            </a>
-            <div class="d-flex align-items-center text-muted">
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-like fs-lg me-1"></i>
-                <span class="fs-sm">5</span>
-              </div>
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-comment fs-lg me-1"></i>
-                <span class="fs-sm">8</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="bx bx-share-alt fs-lg me-1"></i>
-                <span class="fs-sm">4</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Item -->
-  <article class="card border-0 shadow-sm overflow-hidden mb-4">
-    <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url(/assets/img/blog/02.jpg); min-height: 15rem;">
-        <a href="blog-single.html" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Read later">
-          <i class="bx bx-bookmark"></i>
-        </a>
-      </div>
-      <div class="col-sm-8 col-md-7">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
-            <a href="#" class="badge fs-sm text-nav bg-secondary text-decoration-none">Digital</a>
-            <span class="fs-sm text-muted border-start ps-3 ms-3">Aug 19, 2021</span>
-          </div>
-          <h3 class="h4">
-            <a href="blog-single.html">Why UX Design Matters and How it Affects Ranking</a>
-          </h3>
-          <p>In mauris porttitor tincidunt mauris massa sit lorem sed scelerisque. Fringilla pharetra vel massa enim sollicitudin cras. At pulvinar eget sociis adipiscing eget donec ultricies nibh tristique. Adipiscing dui orci ac purus lacus.</p>
-          <hr class="my-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <a href="#" class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
-              <img src="/assets/img/avatar/01.jpg" class="rounded-circle me-3" width="48" alt="Avatar">
-              Jerome Bell
-            </a>
-            <div class="d-flex align-items-center text-muted">
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-like fs-lg me-1"></i>
-                <span class="fs-sm">5</span>
-              </div>
-              <div class="d-flex align-items-center me-3">
-                <i class="bx bx-comment fs-lg me-1"></i>
-                <span class="fs-sm">3</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <i class="bx bx-share-alt fs-lg me-1"></i>
-                <span class="fs-sm">9</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
+<?php
+    }
+  }
+?>
 
   <!-- Pagination -->
-  <nav aria-label="Page navigation example">
+  <!-- <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center pt-lg-3 pt-1">
       <li class="page-item">
         <a href="#" class="page-link">
@@ -354,7 +138,7 @@
         </a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
 </section>
 
 

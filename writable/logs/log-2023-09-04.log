@@ -1,0 +1,57 @@
+CRITICAL - 2023-09-04 05:31:14 --> Too few arguments to function App\Controllers\Home::blogs(), 0 passed in E:\xampp\htdocs\system\CodeIgniter.php on line 932 and exactly 1 expected
+in APPPATH\Controllers\Home.php on line 145.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->blogs()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-04 05:32:12 --> Too few arguments to function App\Controllers\Home::blogs(), 0 passed in E:\xampp\htdocs\system\CodeIgniter.php on line 932 and exactly 1 expected
+in APPPATH\Controllers\Home.php on line 145.
+ 1 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->blogs()
+ 2 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-04 05:35:37 --> Cannot redeclare App\Controllers\Home::blogs()
+in APPPATH\Controllers\Home.php on line 150.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2023-09-04 05:38:25 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'overninja'@'localhost' (using password: YES) in E:\xampp\htdocs\system\Database\MySQLi\Connection.php:173
+Stack trace:
+#0 E:\xampp\htdocs\system\Database\MySQLi\Connection.php(173): mysqli->real_connect('localhost', 'overninja', Object(SensitiveParameterValue), 'overninja_db', 3306, '', 0)
+#1 E:\xampp\htdocs\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\xampp\htdocs\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\xampp\htdocs\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\xampp\htdocs\app\Controllers\Home.php(156): CodeIgniter\BaseModel->findAll()
+#7 E:\xampp\htdocs\system\CodeIgniter.php(932): App\Controllers\Home->blogs('1')
+#8 E:\xampp\htdocs\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 E:\xampp\htdocs\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\xampp\htdocs\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in E:\xampp\htdocs\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 E:\xampp\htdocs\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\xampp\htdocs\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\xampp\htdocs\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\xampp\htdocs\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\xampp\htdocs\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 E:\xampp\htdocs\app\Controllers\Home.php(156): CodeIgniter\BaseModel->findAll()
+#6 E:\xampp\htdocs\system\CodeIgniter.php(932): App\Controllers\Home->blogs('1')
+#7 E:\xampp\htdocs\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 E:\xampp\htdocs\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\xampp\htdocs\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-09-04 05:38:25 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `created_on` DESC', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(156): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->blogs('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
