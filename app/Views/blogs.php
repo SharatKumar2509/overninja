@@ -202,7 +202,7 @@
         </div>
 
         <!-- Email field -->
-        <form onsubmit="subscribe2()" id="subscr2-form" class="d-flex flex-sm-row flex-column mb-3 needs-validation">
+        <form onsubmit="subscribe2()" id="subscr2-form" class="d-flex flex-sm-row flex-column mb-3">
           <div class="input-group me-sm-3 mb-sm-0 mb-3">
             <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted"></i>
             <input type="email" id="subscr2-email" class="form-control form-control-lg rounded-3 ps-5" placeholder="Your email" required>

@@ -88,9 +88,9 @@
             <i class="bx bxl-whatsapp"></i>
           </a>
         </div>
-        <a href="<?= ($liked==true) ? '#' : '/blog/like/'.$blog['id'] ?>" class="btn btn-lg btn-outline-secondary">
+        <a href="<?= ($liked=='true') ? '#' : '/blog-like/'.$blog['id'] ?>" class="btn btn-lg btn-outline-secondary">
           <i class="bx bx-like me-2 lead"></i>
-          <?= ($liked==true) ? 'Liked' : 'Like it' ?>
+          <?= ($liked=='true') ? 'Liked' : 'Like it' ?>
           <span class="badge bg-primary shadow-primary mt-n1 ms-3"><?= $blog['likes'] ?></span>
         </a>
       </div>
@@ -98,6 +98,11 @@
   </div>
 </section>
 
+<?php
+
+if(sizeof($comments)>0) {
+
+?>
 
 <!-- Post comments -->
 <section class="container mb-4 pt-lg-4 pb-lg-3">
@@ -107,22 +112,37 @@
     <!-- Comments -->
     <div class="col-lg-9">
 
+  <?php
+    foreach ($comments as $comment) {
+  ?>
+
       <!-- Comment -->
       <div class="py-4">
         <div class="d-flex align-items-center justify-content-between pb-2 mb-1">
           <div class="me-3">
-            <h6 class="fw-semibold mb-0">Cameron Williamson</h6>
-            <span class="fs-sm text-muted">March 24 at 8:20
-            <!-- date("M d, Y", strtotime("2023-09-25 12:00:00")) . " at " . date("h:i a", strtotime("2023-09-25 00:00:00")); -->
-          </span>
+            <h6 class="fw-semibold mb-0"><?= $comment['fullname'] ?></h6>
+            <span class="fs-sm text-muted">
+              <?= date("M d, Y", strtotime($comment['timestamp'])) . " at " . date("h:i a", strtotime($comment['timestamp'])); ?>
+            </span>
           </div>
         </div>
-        <p class="mb-0">Mattis id ut sed arcu metus elit faucibus condimentum aliquam. Nam adipiscing diam et suspendisse. Sagittis massa maecenas laoreet nulla amet nunc sagittis, pulvinar neque. Duis imperdiet ipsum suspendisse massa lectus habitasse. Id ante volutpat hendrerit augue parturient eget. Ac vitae posuere leo morbi vitae at hac lectus. Nibh neque quam quis amet mattis sit. Faucibus risus at sit tempus ut.</p>
+        <p class="mb-0"><?= $comment['comment'] ?></p>
       </div>
+
+  <?php
+    }
+  ?>
 
     </div>
   </div>
 </section>
+
+
+<?php
+
+}
+
+?>
 
 
 <!-- Comment form + Subscription -->
@@ -134,20 +154,21 @@
       <div class="card p-md-5 p-4 border-0 bg-secondary">
         <div class="card-body w-100 mx-auto px-0" style="max-width: 746px;">
           <h2 class="mb-4 pb-3">Leave a Comment</h2>
-          <form class="row gy-4 needs-validation" novalidate>
+          <form action="/blog-comment" method="post" class="row gy-4 needs-validation" novalidate>
+            <input type="hidden" name="blog_id" value="<?= $blog['id'] ?>">
             <div class="col-sm-6 col-12">
               <label for="c-name" class="form-label fs-base">Name</label>
-              <input id="c-name" type="text" class="form-control form-control-lg" required>
+              <input id="c-name" name="fullname" type="text" class="form-control form-control-lg" required>
               <span class="invalid-tooltip">Please, enter your name.</span>
             </div>
             <div class="col-sm-6 col-12">
               <label for="c-email" class="form-label fs-base">Email</label>
-              <input id="c-email" type="email" class="form-control form-control-lg" required>
+              <input id="c-email" name="email" type="email" class="form-control form-control-lg" required>
               <span class="invalid-tooltip">Please, provide a valid email address.</span>
             </div>
             <div class="col-12">
               <label for="c-comment" class="form-label fs-base">Comment</label>
-              <textarea id="c-comment" class="form-control form-control-lg" rows="3" placeholder="Type your comment here..." required></textarea>
+              <textarea id="c-comment" name="comment" class="form-control form-control-lg" rows="3" placeholder="Type your comment here..." required></textarea>
               <span class="invalid-tooltip">Please, enter your comment.</span>
             </div>
             <div class="col-12">
@@ -166,7 +187,7 @@
           <!-- Subscription form -->
           <div class="col-lg-12 col-sm-7 col-11">
             <h6 class="fs-lg">Enjoy this post? Join our newsletter</h6>
-            <form onsubmit="subscribe3()" id="subscr3-form" class="needs-validation">
+            <form onsubmit="subscribe3()" id="subscr3-form">
               <div class="input-group mb-3">
                 <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y zindex-5 ms-3 text-muted d-lg-inline-block d-none"></i>
                 <input type="email" id="subscr3-email" placeholder="Your Email" class="form-control ps-lg-5 rounded text-lg-start text-center" required>
