@@ -1,0 +1,35 @@
+ERROR - 2023-09-05 05:55:11 --> mysqli_sql_exception: Table 'overninja_db.blogs' doesn't exist in E:\xampp\htdocs\admin\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 E:\xampp\htdocs\admin\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\xampp\htdocs\admin\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\xampp\htdocs\admin\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\xampp\htdocs\admin\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\xampp\htdocs\admin\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\xampp\htdocs\admin\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\xampp\htdocs\admin\app\Controllers\Blog.php(17): CodeIgniter\BaseModel->findAll()
+#7 E:\xampp\htdocs\admin\system\CodeIgniter.php(932): App\Controllers\Blog->index()
+#8 E:\xampp\htdocs\admin\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blog))
+#9 E:\xampp\htdocs\admin\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\xampp\htdocs\admin\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-09-05 05:55:11 --> Table 'overninja_db.blogs' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `blogs`
+ORDER BY `created_on` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `blogs`
+ORDER BY `created_on` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `blogs`
+ORDER BY `created_on` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `blogs`
+ORDER BY `created_on` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Blog.php(17): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Blog->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Blog))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

@@ -32,6 +32,8 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 $routes->get('/blog', 'Blog::index');
+$routes->get('/blog/add', 'Blog::add');
+$routes->post('/blog/add', 'Blog::add_blog');
 
 $routes->get('/case-study', 'CaseStudy::index');
 

@@ -45,11 +45,11 @@
                     <td><?= $item['title'] ?></td>
                     <td><?= $item['created_on'] ?></td>
                     <td>
-                      <a href="/blog/<?= $item['path'] ?>" target="_blank" class="btn btn-success mr-1">
-                        <i class="fas fa-eye-open mr-2"></i>
+                      <a href="/blog/<?= $item['path'] ?>" target="_blank" class="btn btn-success mr-1 mb-1">
+                        <i class="fas fa-eye mr-2"></i>
                         <span>View</span>
                       </a>
-                      <a href="/admin/blog/edit/<?= $item['id'] ?>" class="btn btn-primary mr-1">
+                      <a href="/admin/blog/edit/<?= $item['id'] ?>" class="btn btn-primary mr-1 mb-1">
                         <i class="fas fa-edit mr-2"></i>
                         <span>Edit</span>
                       </a>

@@ -1,9 +1,9 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link p-3 pl-0">
+  <div class="brand-link p-3 pl-0">
     <img src="/assets/img/logo3.png" alt="AdminLTE Logo" style="width: 100%; height: auto;" class="mb-3">
-  </a>
+  </div>
 
   <!-- Sidebar -->
   <div class="sidebar">

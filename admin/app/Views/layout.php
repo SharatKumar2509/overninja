@@ -22,6 +22,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/admin/plugins/fontawesome-free/css/all.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -36,6 +38,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="/admin/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Summernote -->
+  <script src="/admin/plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- bs-custom-file-input -->
+  <script src="/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
   <!-- DataTables  & Plugins -->
   <script src="/admin/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
