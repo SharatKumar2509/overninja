@@ -106,4 +106,12 @@
   });
 </script>
 
+<script type="text/javascript">
+  function deleteBlog(id) {
+    if(confirm('Do you really want to delete this blog?')) {
+      window.location = "<?= base_url()."blog/delete/" ?>" + id;
+    }
+  }
+</script>
+
 <?= $this->endSection(); ?>

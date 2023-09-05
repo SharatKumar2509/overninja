@@ -39,14 +39,8 @@ class Blog extends BaseController
         $blog_image = "";
 
         $file = $this->request->getFile('blog_image');
-        if($file.isValid()) {
-            $blog_image = time()".".$file.getClientExtension();
-            $file->move('./uploads/blogs', $blog_image);
-        }
-        else {
-            $this->session->setFlashdata('failed', 'Something went wrong. Please try again.');
-            return redirect()->to(base_url()."blog");
-        }
+        $blog_image = time().".".$file->getClientExtension();
+        $file->move('/var/www/html/uploads/blogs', $blog_image);
 
         $path = strtolower($this->request->getPost('title'));
         $path = str_replace(" ", "-", $path);
@@ -69,5 +63,27 @@ class Blog extends BaseController
 
         $this->session->setFlashdata('success', 'New blog added successfuly.');
         return redirect()->to(base_url()."blog");
+    }
+
+    public function delete($id)
+    {
+        if($this->session->get('logged_in') != "true") {
+            return redirect()->to(base_url()."login");
+        }
+
+        $blogModel = new BlogModel();
+
+        $item = $blogModel->where('id', $id)->findAll();
+        
+        if(sizeof($item) > 0) {
+            unlink('/var/www/html/uploads/blogs/'.$item[0]['blog_image']);
+            $blogModel->where('id', $id)->delete();
+            $this->session->setFlashdata('success', 'Blog deleted successfuly.');
+            return redirect()->to(base_url()."blog");
+        }
+        else {
+            $this->session->setFlashdata('failed', 'Something went wrong. Please try again.');
+            return redirect()->to(base_url()."blog");
+        }
     }
 }
