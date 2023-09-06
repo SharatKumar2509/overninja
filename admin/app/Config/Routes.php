@@ -34,6 +34,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/blog', 'Blog::index');
 $routes->get('/blog/add', 'Blog::add');
 $routes->post('/blog/add', 'Blog::add_blog');
+$routes->get('/blog/edit/(:any)', 'Blog::edit/$1');
+$routes->post('/blog/edit/(:any)', 'Blog::edit_blog/$1');
 $routes->get('/blog/delete/(:any)', 'Blog::delete/$1');
 
 $routes->get('/case-study', 'CaseStudy::index');

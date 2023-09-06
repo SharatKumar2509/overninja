@@ -59,28 +59,32 @@
 
 <?php
   if(sizeof($blogs) > 0) {
+?>
+
+  <!-- Blog grid -->
+  <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-md-4 gy-2">
+
+<?php
     foreach ($blogs as $blog) {
 ?>
 
-  <!-- Item -->
-  <article class="card border-0 shadow-sm overflow-hidden mb-4 mb-md-5">
-    <div class="row g-0">
-      <div class="col-sm-4 position-relative bg-position-center bg-repeat-0 bg-size-cover" style="background-image: url('/uploads/blogs/<?= $blog['blog_image'] ?>'); min-height: 15rem;">
-        <a href="/blog/<?= $blog['path'] ?>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
-      </div>
-      <div class="col-sm-8">
-        <div class="card-body">
-          <div class="d-flex align-items-center mb-3">
+    <!-- Item -->
+    <div class="col pb-3">
+      <article class="card border-0 shadow-sm h-100">
+        <div class="position-relative">
+          <a href="/blog/<?= $blog['path'] ?>" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+          <img src="/uploads/blogs/<?= $blog['blog_image'] ?>" class="card-img-top" alt="Image">
+        </div>
+        <div class="card-body pb-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
             <div class="badge fs-sm text-nav bg-secondary text-decoration-none"><?= $blog['category'] ?></div>
-            <span class="fs-sm text-muted border-start ps-3 ms-3">
-              <?= date("M d, Y", strtotime($blog['created_on'])); ?>
-            </span>
+            <span class="fs-sm text-muted"><?= date("M d, Y", strtotime($blog['created_on'])); ?></span>
           </div>
-          <h3 class="h4">
+          <h3 class="h5 mb-0">
             <a href="/blog/<?= $blog['path'] ?>"><?= $blog['title'] ?></a>
           </h3>
-          <p><?= $blog['meta_desc'] ?></p>
-          <hr class="my-4">
+        </div>
+        <div class="card-footer py-4">
           <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center fw-bold text-dark text-decoration-none me-3">
               <?= $blog['author'] ?>
@@ -97,13 +101,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </div>
-  </article>
 
 <?php
     }
 ?>
+
+  </div>
 
   <!-- Pagination -->
   <nav aria-label="Page navigation example">

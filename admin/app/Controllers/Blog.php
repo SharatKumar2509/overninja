@@ -65,6 +65,72 @@ class Blog extends BaseController
         return redirect()->to(base_url()."blog");
     }
 
+    public function edit($id)
+    {
+        if($this->session->get('logged_in') != "true") {
+            return redirect()->to(base_url()."login");
+        }
+
+        $blogModel = new BlogModel();
+
+        $blog = $blogModel->where('id', $id)->findAll();
+
+        if(sizeof($blog) > 0) {
+            $data['blog'] = $blog[0];
+            return view('edit-blog', $data);
+        }
+        else {
+            return redirect()->to(base_url()."blog");
+        }
+    }
+
+    public function edit_blog($id)
+    {
+        if($this->session->get('logged_in') != "true") {
+            return redirect()->to(base_url()."login");
+        }
+
+        $blogModel = new BlogModel();
+
+        $item = $blogModel->where('id', $id)->findAll();
+        
+        if(sizeof($item) > 0) {
+            $path = "";
+            $blog_image = "";
+
+            $path = strtolower($this->request->getPost('title'));
+            $path = str_replace(" ", "-", $path);
+            $path = preg_replace('/[^a-zA-Z0-9_ -]/s','',$path);
+
+            $row = [
+                "path"          =>  $path,
+                "title"         =>  $this->request->getPost('title'),
+                "category"      =>  $this->request->getPost('category'),
+                "author"        =>  $this->request->getPost('author'),
+                "meta_desc"     =>  $this->request->getPost('meta_desc')
+                "alt_text"      =>  $this->request->getPost('alt_text'),
+                "content"       =>  $this->request->getPost('content')
+            ];
+
+            $file = $this->request->getFile('blog_image');
+            if($file!=null) {
+                $blog_image = time().".".$file->getClientExtension();
+                $file->move('/var/www/html/uploads/blogs', $blog_image);
+                $row['blog_image'   =>  $blog_image];
+                unlink('/var/www/html/uploads/blogs/'.$item[0]['blog_image']);
+            }
+
+            $blogModel->update($id, $row);
+
+            $this->session->setFlashdata('success', 'Blog edited successfuly.');
+            return redirect()->to(base_url()."blog");
+        }
+        else {
+            $this->session->setFlashdata('failed', 'Something went wrong. Please try again.');
+            return redirect()->to(base_url()."blog");
+        }
+    }
+
     public function delete($id)
     {
         if($this->session->get('logged_in') != "true") {
