@@ -55,6 +55,8 @@
         }
       ?>
 
+        </div>
+
         <!-- Pagination -->
         <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
       </div>

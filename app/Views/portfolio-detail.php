@@ -27,19 +27,14 @@
 
 <!-- Page title -->
 <section class="container pb-4 mt-5 pt-5 mb-2 mb-lg-3">
-  <h1 class="mt-3 mt-md-5 pt-4">Single Project 3D Rendering of Human Sculpture</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <h1 class="mt-3 mt-md-5 pt-4"><?= $portfolio['client'] ?></h1>
+  <p><?= $portfolio['introduction'] ?></p>
 </section>
 
 
 <!-- Hero image (Parallax) -->
 <section class="jarallax" data-jarallax data-speed="0.4">
-  <div class="jarallax-img" style="background-image: url(/assets/img/portfolio/single/hero.jpg);"></div>
+  <div class="jarallax-img" style="background-image: url('/uploads/portfolio/<?= $portfolio['project_image'] ?>');"></div>
   <div class="d-none d-xxl-block" style="height: 800px;"></div>
   <div class="d-none d-lg-block d-xxl-none" style="height: 600px;"></div>
   <div class="d-none d-md-block d-lg-none" style="height: 450px;"></div>
@@ -53,7 +48,7 @@
     <div class="col-lg-7 mb-4 mb-lg-0">
       <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
         <h2 class="h1 mb-4">Client Requirement</h2>
-        <p class="fs-lg mb-0">Lacinia pulvinar at diam, urna, non blandit. Cras id enim tortor nascetur. Cursus ante eu nam ut non vestibulum sem. Ullamcorper quis varius eu, vel. Sagittis ut suspendisse et, nec. Parturient eu iaculis sit dolor, erat mauris. Leo at egestas aliquet duis pellentesque amet. Proin mattis ac ornare malesuada sed. Diam libero tortor suspendisse molestie non duis enim. Lectus pulvinar euismod et risus egestas. Cursus porttitor id faucibus eu vestibulum. Eu blandit faucibus nulla adipiscing amet ullamcorper.</p>
+        <p class="fs-lg mb-0"><?= $portfolio['requirement'] ?></p>
       </div>
     </div>
     <div class="col-lg-5 col-xl-4 offset-xl-1 border-start-lg">
@@ -62,12 +57,12 @@
           <i class="bx bx-help-circle text-primary fs-4 me-2"></i>
           Challenge
         </h3>
-        <p class="pb-4 mb-0 mb-lg-3">Ultricies massa iaculis vestibulum egestas vestibulum, cursus. Leo non arcu ultricies senectus a purus sed.</p>
+        <p class="pb-4 mb-0 mb-lg-3"><?= $portfolio['challenge'] ?></p>
         <h3 class="h5 d-flex align-items-center">
           <i class="bx bx-bulb text-primary fs-4 me-2"></i>
           Solution
         </h3>
-        <p class="mb-0">Sit tellus id proin viverra iaculis pellentesque ornare. Diam augue sit feugiat porttitor leo, fusce vel ac. Placerat vulputate quisque.</p>
+        <p class="mb-0"><?= $portfolio['solution'] ?></p>
       </div>
     </div>
   </div>
@@ -105,60 +100,36 @@
     <h1>Features</h1>
     <div class="row row-cols-1 row-cols-md-2">
 
-      <!-- Item -->
-      <div class="col py-4 my-2 my-sm-3">
-        <a href="services-single-v1.html" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-3 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
-          <div class="card-body">
-            <h2 class="h4 d-inline-flex align-items-center">
-              Mobile App Development
-            </h2>
-            <p class="fs-sm text-body mb-0">Nunc, justo, diam orci, dictum purus convallis risus. Suscipit hendrerit at egestas id id blandit interdum est. Integer fames placerat turpis pretium quis hac leo lacus. Orci, dictum nunc mus quis semper eu bibendum enim, morbi.</p>
-          </div>
-        </a>
-      </div>
+<?php
+  $features = explode("####", $portfolio['features']);
+  $features = array_filter($features);
+
+  foreach ($features as $feature) {
+    $feature = explode("###", $feature);
+?>
 
       <!-- Item -->
       <div class="col py-4 my-2 my-sm-3">
         <a href="services-single-v1.html" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-3 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
           <div class="card-body">
             <h2 class="h4 d-inline-flex align-items-center">
-              Mobile App Development
+              <?= $feature[0] ?>
             </h2>
-            <p class="fs-sm text-body mb-0">Nunc, justo, diam orci, dictum purus convallis risus. Suscipit hendrerit at egestas id id blandit interdum est. Integer fames placerat turpis pretium quis hac leo lacus. Orci, dictum nunc mus quis semper eu bibendum enim, morbi.</p>
+            <p class="fs-sm text-body mb-0"><?= $feature[1] ?></p>
           </div>
         </a>
       </div>
 
-      <!-- Item -->
-      <div class="col py-4 my-2 my-sm-3">
-        <a href="services-single-v1.html" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-3 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
-          <div class="card-body">
-            <h2 class="h4 d-inline-flex align-items-center">
-              Mobile App Development
-            </h2>
-            <p class="fs-sm text-body mb-0">Nunc, justo, diam orci, dictum purus convallis risus. Suscipit hendrerit at egestas id id blandit interdum est. Integer fames placerat turpis pretium quis hac leo lacus. Orci, dictum nunc mus quis semper eu bibendum enim, morbi.</p>
-          </div>
-        </a>
-      </div>
+<?php
+  }
+?>
 
-      <!-- Item -->
-      <div class="col py-4 my-2 my-sm-3">
-        <a href="services-single-v1.html" class="card card-hover h-100 border-0 shadow-sm text-decoration-none pt-3 px-sm-3 px-md-0 px-lg-3 pb-sm-3 pb-md-0 pb-lg-3 ms-xl-2">
-          <div class="card-body">
-            <h2 class="h4 d-inline-flex align-items-center">
-              Mobile App Development
-            </h2>
-            <p class="fs-sm text-body mb-0">Nunc, justo, diam orci, dictum purus convallis risus. Suscipit hendrerit at egestas id id blandit interdum est. Integer fames placerat turpis pretium quis hac leo lacus. Orci, dictum nunc mus quis semper eu bibendum enim, morbi.</p>
-          </div>
-        </a>
-      </div>
     </div>
   </div>
-</section>
 
 
 <!-- Results -->
-<section class="container py-5 my-2 my-md-4 my-lg-5">
+<!-- <section class="container py-5 my-2 my-md-4 my-lg-5">
   <div class="row py-md-3">
     <div class="col-md-3 offset-lg-1">
       <h2>Results</h2>
@@ -181,35 +152,26 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<!-- Testimonial -->
-<section class="bg-secondary py-5">
   <div class="container py-2 py-md-4 py-lg-5">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="position-relative d-flex h-100">
-          <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3 bg-size-cover bg-repeat-0 bg-position-center" style="background-image: url(/assets/img/testimonials/03.jpg);"></div>
-        </div>
-      </div>
-      <div class="col-md-8">
+    <div class="row pb-5">
+      <div class="col-md-8 offset-md-2">
         <figure class="card position-relative border-0 shadow-sm py-3 p-0 p-lg-4 mt-4 mb-0 ms-xl-5">
           <span class="btn btn-icon btn-primary btn-lg shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4 ms-lg-5">
             <i class="bx bxs-quote-left"></i>
           </span>
           <blockquote class="card-body mt-2 mb-0">
-            <p class="fs-lg">Dolor, a eget elementum, integer nulla volutpat, nunc, sit. Quam iaculis varius mauris magna sem. Egestas sed sed suscipit dolor faucibus dui imperdiet at eget. Tincidunt imperdiet quis hendrerit aliquam feugiat neque cras sed. Dictum quam integer volutpat tellus, faucibus platea. Pulvinar turpis proin faucibus at mauris.</p>
+            <p class="fs-lg"><?= $portfolio['review'] ?></p>
           </blockquote>
           <figcaption class="card-footer border-0 d-sm-flex pt-0 mt-n3 mt-lg-0">
-            <div class="d-flex align-items-center border-end-sm pe-sm-4 me-sm-4">
-              <img src="/assets/img/avatar/05.jpg" width="48" class="d-md-none rounded-circle" alt="Ralph Edwards">
+            <div class="d-flex align-items-center">
               <div class="ps-3 ps-md-0">
-                <h5 class="fw-semibold lh-base mb-0">Ralph Edwards</h5>
-                <span class="fs-sm text-muted">Head of Marketing</span>
+                <h5 class="fw-semibold lh-base mb-0"><?= $portfolio['reviewer'] ?></h5>
+                <span class="fs-sm text-muted"><?= $portfolio['designation'] ?></span>
               </div>
             </div>
-            <img src="/assets/img/brands/02.svg" width="160" class="d-block mt-2 ms-5 mt-sm-0 ms-sm-0" alt="Company logo">
           </figcaption>
         </figure>
       </div>
@@ -217,6 +179,11 @@
   </div>
 </section>
 
+<?php
+
+if(sizeof($portfolios)>0) {
+
+?>
 
 <!-- Related projects (Carousel on narrow screens) -->
 <section class="container py-5 mb-xl-2">
@@ -264,10 +231,18 @@
   }
 ?>
 
+    </div>
+
     <!-- Pagination (bullets) -->
     <div class="swiper-pagination position-relative pt-sm-2 mt-4"></div>
   </div>
 </section>
+
+<?php
+
+}
+
+?>
 
 
 <?php include('includes/connect.php'); ?>

@@ -171,16 +171,16 @@ class Home extends BaseController
         $portfolioModel = new PortfolioModel();
         $portfolio = $portfolioModel->where('id', $id)->findAll();
         
-        if(sizeof($portfolio) <= 0) {
-            return redirect()->to(base_url()."case-study");
-        }
-        else {
-            $data['portfolio'] = $portfolio;
+        if(sizeof($portfolio) > 0) {
+            $data['portfolio'] = $portfolio[0];
 
             $portfolios = $portfolioModel->where('id!='.$id)->orderBy('created_on', 'DESC')->findAll();
             $data['portfolios'] = $portfolios;
 
             return view('portfolio-detail', $data);
+        }
+        else {
+            return redirect()->to(base_url()."case-study");
         }
     }
 

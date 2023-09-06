@@ -107,16 +107,16 @@ class Blog extends BaseController
                 "title"         =>  $this->request->getPost('title'),
                 "category"      =>  $this->request->getPost('category'),
                 "author"        =>  $this->request->getPost('author'),
-                "meta_desc"     =>  $this->request->getPost('meta_desc')
+                "meta_desc"     =>  $this->request->getPost('meta_desc'),
                 "alt_text"      =>  $this->request->getPost('alt_text'),
                 "content"       =>  $this->request->getPost('content')
             ];
 
             $file = $this->request->getFile('blog_image');
-            if($file!=null) {
+            if($file->isValid()) {
                 $blog_image = time().".".$file->getClientExtension();
                 $file->move('/var/www/html/uploads/blogs', $blog_image);
-                $row['blog_image'   =>  $blog_image];
+                $row['blog_image'] = $blog_image;
                 unlink('/var/www/html/uploads/blogs/'.$item[0]['blog_image']);
             }
 

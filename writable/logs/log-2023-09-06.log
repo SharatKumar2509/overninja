@@ -1,0 +1,22 @@
+CRITICAL - 2023-09-06 13:40:33 --> Undefined variable $portfolios
+in APPPATH\Views\portfolio-detail.php on line 243.
+ 1 APPPATH\Views\portfolio-detail.php(243): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $portfolios', 'E:\\xampp\\htdocs\\app\\Views\\portfolio-detail.php', 243)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\app\\Views\\portfolio-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('portfolio-detail', [], true)
+ 5 APPPATH\Controllers\Home.php(183): view('portfolio-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->portfolio_detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-09-06 13:43:04 --> Undefined variable $val
+in APPPATH\Views\portfolio-detail.php on line 250.
+ 1 APPPATH\Views\portfolio-detail.php(250): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $val', 'E:\\xampp\\htdocs\\app\\Views\\portfolio-detail.php', 250)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\xampp\\htdocs\\app\\Views\\portfolio-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1176): CodeIgniter\View\View->render('portfolio-detail', [], true)
+ 5 APPPATH\Controllers\Home.php(183): view('portfolio-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Home->portfolio_detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

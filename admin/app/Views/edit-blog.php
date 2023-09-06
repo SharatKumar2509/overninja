@@ -46,7 +46,7 @@
             </div>
             <div class="col-12">
               <label>Blog Content</label>
-              <textarea name="content" id="summernote" rows="25"> value="<?= $blog['content'] ?>"</textarea>
+              <textarea name="content" id="summernote" rows="25"><?= $blog['content'] ?></textarea>
               <button type="submit" class="btn btn-primary mt-4">Save Changes</button>
             </div>
           </form>
