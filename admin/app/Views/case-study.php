@@ -108,4 +108,12 @@
   });
 </script>
 
+<script type="text/javascript">
+  function deleteProject(id) {
+    if(confirm('Do you really want to delete this case study?')) {
+      window.location = "<?= base_url()."case-study/delete/" ?>" + id;
+    }
+  }
+</script>
+
 <?= $this->endSection(); ?>

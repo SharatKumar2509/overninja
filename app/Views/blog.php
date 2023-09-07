@@ -11,7 +11,7 @@
     <div class="row justify-content-center pt-3 mt-3">
       <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
         <h1 class="mb-4">Our Blog</h1>
-        <!-- <p class="fs-lg pb-3 mb-3">Have a project in mind? To request a quote contact us directly or fill out the form and let us know how we can help.</p> -->
+        <p class="fs-lg pb-3 mb-3">Explore our insights, trends, and industry knowledge.</p>
       </div>
     </div>
   </div>

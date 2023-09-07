@@ -39,6 +39,11 @@ $routes->post('/blog/edit/(:any)', 'Blog::edit_blog/$1');
 $routes->get('/blog/delete/(:any)', 'Blog::delete/$1');
 
 $routes->get('/case-study', 'CaseStudy::index');
+$routes->get('/case-study/add', 'CaseStudy::add');
+$routes->post('/case-study/add', 'CaseStudy::add_case_study');
+$routes->get('/case-study/edit/(:any)', 'CaseStudy::edit/$1');
+$routes->post('/case-study/edit/(:any)', 'CaseStudy::edit_blog/$1');
+$routes->get('/case-study/delete/(:any)', 'CaseStudy::delete/$1');
 
 $routes->get('/testimonial', 'Testimonial::index');
 $routes->get('/testimonial/add', 'Testimonial::add');

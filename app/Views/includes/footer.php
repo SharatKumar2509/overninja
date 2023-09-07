@@ -66,13 +66,13 @@
         <ul class="nav flex-column mb-2 mb-lg-0">
             <li class="nav-item"><a href="mailto:sales@overninja.com" class="nav-link d-inline-block px-0 pb-0 fw-medium"><i class="fas fa-envelope"></i>&nbsp;&nbsp;sales@overninja.com</a></li>
             <li class="nav-item"><a href="#" class="nav-link d-inline-block px-0 pb-0 fw-medium"><i class="fab fa-skype"></i>&nbsp;&nbsp;overninja.tech</a></li>
-            <li class="nav-item"><a href="tel:+919016401207" class="nav-link d-inline-block px-0 pb-0 fw-medium"><i class="fas fa-phone"></i>&nbsp;&nbsp;+91 - 90164 01207</a></li>
+            <li class="nav-item"><a href="tel:+919998847740" class="nav-link d-inline-block px-0 pb-0 fw-medium"><i class="fas fa-phone"></i>&nbsp;&nbsp;+91 - 99988 47740</a></li>
             <li class="nav-item"><a href="tel:+17739156141" class="nav-link d-inline-block px-0 fw-medium"><i class="fas fa-phone"></i>&nbsp;&nbsp;+1 - 773 915 6141</a></li>
         </ul>
         <br><b>For HR Enquiry</b><br>
         <ul class="nav flex-column mb-2 mb-lg-0">
             <li class="nav-item"><a href="mailto:hr@overninja.com" class="nav-link d-inline-block px-0 pb-0 fw-medium"><i class="fas fa-envelope"></i>&nbsp;&nbsp;hr@overninja.com</a></li>
-            <li class="nav-item"><a href="tel:+919016401207" class="nav-link d-inline-block px-0 fw-medium"><i class="fas fa-phone"></i>&nbsp;&nbsp;+91 - 9016401207</a></li>
+            <li class="nav-item"><a href="tel:+919998834060" class="nav-link d-inline-block px-0 fw-medium"><i class="fas fa-phone"></i>&nbsp;&nbsp;+91 - 99988 34060</a></li>
         </ul>
       </div>
     </div>

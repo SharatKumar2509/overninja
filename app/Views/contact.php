@@ -119,8 +119,8 @@
       </div>
       <div class="ps-4 ps-sm-0 ps-lg-4 ms-lg-2 me-xl-2 pe-xl-5">
         <h3 class="h4 mb-2 mb-md-3">WhatsApp Us</h3>
-        <a href="https://api.whatsapp.com/send/?phone=919016401207" target="_blank" rel="noreferrer noopener" class="btn btn-link btn-lg px-0 py-2">
-          +91 - 901 640 1207
+        <a href="https://api.whatsapp.com/send/?phone=919998847740" target="_blank" rel="noreferrer noopener" class="btn btn-link btn-lg px-0 py-2">
+          +91 - 99988 47740
         </a>
       </div>
     </div>
@@ -153,45 +153,5 @@
   </div>
 </section>
 
-
-<!-- Branches -->
-<!-- <section class="container py-2 py-lg-4 py-xl-5 mt-5 mb-2 mb-md-3">
-  <div class="row mx-xl-5 px-xxl-5">
-    <div class="col-lg-4">
-      <div class="d-flex align-items-start pb-3 mb-sm-1 mb-md-3">
-        <div class="bg-secondary text-primary rounded-circle flex-shrink-0 fs-3 lh-1 p-3">
-          <i class="bx bx-map"></i>
-        </div>
-        <div class="ps-3 ps-sm-4">
-          <h2 class="h4 pb-1 mb-2">Reach Us</h2>
-          <p class="mb-2">501, Shapath 1, SG Hwy, Bodakdev, Ahmedabad, Gujarat 380054</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="d-flex align-items-start pb-3 mb-sm-1 mb-md-3">
-        <div class="bg-secondary text-primary rounded-circle flex-shrink-0 fs-3 lh-1 p-3">
-          <i class="bx bx-envelope"></i>
-        </div>
-        <div class="ps-3 ps-sm-4">
-          <h2 class="h4 pb-1 mb-2">Email us</h2>
-          <a href="mailto:sales@overninja.com" class="btn btn-link btn-lg p-0 mb-2">sales@overninja.com</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="d-flex align-items-start">
-        <div class="bg-secondary text-primary rounded-circle flex-shrink-0 fs-3 lh-1 p-3">
-          <i class="bx bx-group"></i>
-        </div>
-        <div class="ps-3 ps-sm-4">
-          <h2 class="h4 pb-1 mb-2">Connect With Us</h2>
-          <a href="tel:+17739156141" class="btn btn-link btn-lg p-0 mb-2">+1 - 7739156141</a><br>
-          <a href="tel:+919016401207" class="btn btn-link btn-lg p-0 mb-2">+91 - 9016401207</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <?= $this->endSection(); ?>

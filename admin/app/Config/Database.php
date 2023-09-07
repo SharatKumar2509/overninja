@@ -27,8 +27,10 @@ class Database extends Config
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'overninja',
-        'password' => '!@Sk#$25',
+        // 'username' => 'overninja',
+        // 'password' => '!@Sk#$25',
+        'username' => 'root',
+        'password' => '',
         'database' => 'overninja_db',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',

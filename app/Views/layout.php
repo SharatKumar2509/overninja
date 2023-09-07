@@ -153,7 +153,7 @@
       <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
     </a>
 
-    <a href="https://api.whatsapp.com/send/?phone=919016401207" target="_blank" rel="noreferrer noopener" style="position: fixed; bottom: 4%; left: 2%; z-index: 100">
+    <a href="https://api.whatsapp.com/send/?phone=919998847740" target="_blank" rel="noreferrer noopener" style="position: fixed; bottom: 4%; left: 2%; z-index: 100">
       <img src="/assets/img/brands/whatsapp.png" class="d-block" style="width: 50px; height: auto;" alt='...' />
     </a>
 

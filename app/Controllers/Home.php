@@ -68,8 +68,8 @@ class Home extends BaseController
 
     public function web_development()
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Web Development | Overninja Technologies";
+        $data['meta_desc'] = "Crafting digital experiences that leave a lasting impression.";
 
         $blogModel = new BlogModel();
         $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
@@ -80,8 +80,8 @@ class Home extends BaseController
 
     public function mobile_app_development()
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Mobile App Development | Overninja Technologies";
+        $data['meta_desc'] = "Transforming ideas into mobile realities.";
 
         $blogModel = new BlogModel();
         $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
@@ -92,8 +92,8 @@ class Home extends BaseController
 
     public function ecommerce_development()
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Ecommerce Development | Overninja Technologies";
+        $data['meta_desc'] = "Creating seamless online shopping experiences.";
 
         $blogModel = new BlogModel();
         $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
@@ -104,8 +104,8 @@ class Home extends BaseController
 
     public function it_support()
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "IT Support | Overninja Technologies";
+        $data['meta_desc'] = "Your trusted tech companions for seamless operations.";
 
         $blogModel = new BlogModel();
         $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
@@ -116,8 +116,8 @@ class Home extends BaseController
 
     public function digital_marketing()
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Digital Marketing | Overninja Technologies";
+        $data['meta_desc'] = "Boosting your online presence with strategic marketing.";
 
         $blogModel = new BlogModel();
         $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
@@ -128,8 +128,8 @@ class Home extends BaseController
 
     public function game_development()
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Game Development | Overninja Technologies";
+        $data['meta_desc'] = "Level up your gaming vision with our expert team.";
 
         $blogModel = new BlogModel();
         $latestBlogs = $blogModel->orderBy('created_on', 'DESC')->limit(3)->find();
@@ -165,8 +165,8 @@ class Home extends BaseController
 
     public function portfolio_detail($id)
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Showcase of extraordinary and remarkable achievements";
+        $data['meta_desc'] = "Dive into our diverse range of case studies that highlight our expertise and commitment to finding effective strategies. Learn how we turn insights into action.";
 
         $portfolioModel = new PortfolioModel();
         $portfolio = $portfolioModel->where('id', $id)->findAll();
@@ -198,8 +198,8 @@ class Home extends BaseController
 
     public function blogs($page="")
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Our Blogs | Overninja Technologies";
+        $data['meta_desc'] = "Explore our insights, trends, and industry knowledge.";
 
         if($page=="") {
             return redirect()->to(base_url()."blogs/1");
@@ -309,8 +309,8 @@ class Home extends BaseController
 
     public function blog($path)
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Our Blog";
+        $data['meta_desc'] = "Explore our insights, trends, and industry knowledge.";
 
         $blogModel = new BlogModel();
 
@@ -401,7 +401,7 @@ class Home extends BaseController
 
     public function hire_developer()
     {
-        $data['meta_title'] = "";
+        $data['meta_title'] = "Hire Developers | Overninja Technologies";
         $data['meta_desc'] = "Hire Top Developers for Your Projects! Our skilled developers bring your ideas to life. From web to app development, find the perfect developer for your needs.";
 
         $blogModel = new BlogModel();
@@ -413,16 +413,16 @@ class Home extends BaseController
 
     public function terms()
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Terms and Conditions | Overninja Technologies";
+        $data['meta_desc'] = "Understanding the rules of engagement with Overninja Technologies.";
 
         return view('terms-and-conditions', $data);
     }
 
     public function privacy()
     {
-        $data['meta_title'] = "";
-        $data['meta_desc'] = "";
+        $data['meta_title'] = "Privacy Policy | Overninja Technologies";
+        $data['meta_desc'] = "Your data, your privacy – our commitment to security.";
 
         return view('privacy-policy', $data);
     }

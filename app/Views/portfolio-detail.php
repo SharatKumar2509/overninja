@@ -96,6 +96,13 @@
 
 <!-- Page title + Services grid -->
 <section class="bg-secondary mt-5 pt-5">
+
+<?php
+
+if(strlen($features)>0) {
+
+?>
+
   <div class="container pb-2 pb-md-4 pb-lg-5 mb-3">
     <h1>Features</h1>
     <div class="row row-cols-1 row-cols-md-2">
@@ -127,6 +134,11 @@
     </div>
   </div>
 
+<?php
+
+}
+
+?>
 
 <!-- Results -->
 <!-- <section class="container py-5 my-2 my-md-4 my-lg-5">
